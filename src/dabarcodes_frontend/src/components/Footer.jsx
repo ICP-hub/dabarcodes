@@ -4,7 +4,7 @@ import { FaFacebook } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 function Footer() {
   return (
-    <footer className="bg-[#DBF4FD] w-full py-10 px-10">
+    <footer className="bg-[#DBF4FD] w-full py-10 px-10 sm:pt-4">
       <div className="w-full m-4 lg:grid  grid-cols-12 gap-20">
         {/*  */}
         <div className="col-span-6  ">
