@@ -10,8 +10,7 @@ const MultiStepForm = () => {
   const [currentStep, setCurrentStep] = useState(1);
   const [formData, setFormData] = useState({
     personalInfo: {},
-    contactDetails: {},
-    additionalDetails: {},
+
     finalDetails: {},
   });
 
