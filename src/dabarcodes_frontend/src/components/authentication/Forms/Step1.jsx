@@ -9,7 +9,7 @@ const Step1 = ({ formData, setFormData }) => {
 
   const onSubmit = (data) => {
     console.log("Form data submitted:", data);
-    // setFormData((prevData) => ({ ...prevData, personalInfo: data }));
+    setFormData((prevData) => ({ ...prevData, personalInfo: data }));
   };
 
   const handleChange = (e) => {
@@ -176,7 +176,7 @@ const Step1 = ({ formData, setFormData }) => {
         </div>
       </div>
 
-      <button type="submit">ok</button>
+      {/* <button type="submit">submit</button> */}
     </form>
   );
 };
