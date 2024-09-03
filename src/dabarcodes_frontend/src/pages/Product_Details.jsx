@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FaArrowCircleDown, FaTimes } from "react-icons/fa";
 import { FaChevronDown } from "react-icons/fa6";
 import Participating from "../components/Retailers/Participating";
@@ -6,6 +6,18 @@ import ProductCard from "../reusable_components/ProductCard";
 import { Items } from "../components/customer/giftCarddata";
 
 const Product_Details = () => {
+  useEffect(() => {
+    const scrollToTop = () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    };
+
+    requestAnimationFrame(() => {
+      setTimeout(scrollToTop, 0);
+    });
+  }, []);
   const [isView, setIsView] = useState(false);
   return (
     <>

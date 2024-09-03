@@ -8,7 +8,7 @@ const Product = ({ data, isLinked = false }) => {
           key={product.id}
           className={`${product.bgColor} ${
             product.isExpiringToday && " border-[#10B4F1] border-[2px]"
-          } md:justify-between  items-center md:flex rounded-xl  relative `}
+          } md:justify-between border  items-center md:flex rounded-xl  relative `}
         >
           {product.isExpiringToday && <Ribbon />}
 

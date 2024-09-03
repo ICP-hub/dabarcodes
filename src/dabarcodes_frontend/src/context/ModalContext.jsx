@@ -6,12 +6,16 @@ export const ModalProvider = ({ children }) => {
   const [isRoleModalOpen, setIsRoleModalOpen] = useState(false);
   const [isConnectWalletModalOpen, setIsConnectWalletModalOpen] =
     useState(false);
+  const [isCountryList, setIsCountryList] = useState(false);
 
   const openRoleModal = () => setIsRoleModalOpen(true);
   const closeRoleModal = () => setIsRoleModalOpen(false);
 
   const openConnectWalletModal = () => setIsConnectWalletModalOpen(true);
   const closeConnectWalletModal = () => setIsConnectWalletModalOpen(false);
+
+  const openCountryList = () => setIsCountryList(true);
+  const closeCountryList = () => setIsCountryList(false);
 
   //
   const [isTokenOpen, setIsTokenOpen] = useState(false);
@@ -69,6 +73,10 @@ export const ModalProvider = ({ children }) => {
         openLinkedSKU,
         closeLinkedSKU,
         linkedSKU,
+        //
+        isCountryList,
+        openCountryList,
+        closeCountryList,
       }}
     >
       {children}

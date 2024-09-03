@@ -2,7 +2,7 @@ import { RiDiscountPercentFill } from "react-icons/ri";
 import { FaHeart } from "react-icons/fa";
 import { IoBagHandle } from "react-icons/io5";
 import { Link } from "react-router-dom";
-const basePath = "/public/category";
+const basePath = "/category";
 import React from "react";
 import { category } from "./Category_Promotion";
 const CategoryDetail = () => {

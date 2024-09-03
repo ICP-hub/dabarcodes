@@ -26,7 +26,7 @@ const ProductCard = ({ product }) => {
   return (
     <div
       onClick={() => handleClick(product)}
-      className="w-[244px] h-[423px] cursor-pointer rounded-md bg-[#E7F8FE] relative"
+      className="w-[244px] h-[423px cursor-pointer rounded-md bg-[#E7F8FE] relative"
     >
       {/* Conditionally render the ribbon if the product is expiring */}
       {product.isExpiring && (

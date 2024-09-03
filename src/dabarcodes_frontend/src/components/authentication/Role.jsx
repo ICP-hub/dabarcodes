@@ -2,9 +2,12 @@ import React from "react";
 import Modal from "../../reusable_components/Modal";
 
 import { useModal } from "../../context/ModalContext";
+import { useAuthStore } from "../../store/authStore";
 
 const Role = () => {
   const { closeRoleModal, openConnectWalletModal } = useModal();
+  const { login } = useAuthStore();
+
   const handleRoleImageClick = (name) => {
     console.log(`Role image clicked: ${name}`);
   };
@@ -12,7 +15,7 @@ const Role = () => {
   const handleRoleButtonClick = () => {
     console.log("Role button clicked");
     closeRoleModal();
-    openConnectWalletModal();
+    login();
   };
   return (
     <Modal

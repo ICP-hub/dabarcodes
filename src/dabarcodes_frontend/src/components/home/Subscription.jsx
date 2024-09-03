@@ -4,7 +4,10 @@ import { IoBagHandle } from "react-icons/io5";
 import { Link } from "react-router-dom";
 const Subscription = () => {
   return (
-    <div className="flex flex-row sm:ml-[62px]   bg-[#E7F8FE] border-[#055C9A] border-[0.86px] sm:rounded-[231.53px_0_0_231.53px] opacity-52 sm:mb-40 mb-20">
+    <div
+      id="purchase"
+      className="flex flex-row sm:ml-[62px]   bg-[#E7F8FE] border-[#055C9A] border-[0.86px] sm:rounded-[231.53px_0_0_231.53px] opacity-52 sm:mb-40 mb-20"
+    >
       {/* Main Image Section */}
       <div className="lg:flex hidden xl:h-[481px]  lg:h-[400px] justify-center xl:mt-[-37px] ">
         <img

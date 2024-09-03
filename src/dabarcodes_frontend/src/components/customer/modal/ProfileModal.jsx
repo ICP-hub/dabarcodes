@@ -2,7 +2,7 @@ import React from "react";
 import { useModal } from "../../../context/ModalContext";
 import Modal from "./Modal";
 import { Link } from "react-router-dom";
-import { useAuthStore } from "../../../../../store/authStore";
+import { useAuthStore } from "../../../store/authStore";
 
 const ProfileModal = () => {
   const { isProfileModalOpen, closeProfile } = useModal();

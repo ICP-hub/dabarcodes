@@ -24,6 +24,12 @@ import CoupanDetails from "./components/customer/CoupanDetails";
 import Retailer from "./pages/Retailer";
 import MultiStepForm from "./components/authentication/MultiStepForm";
 import LinkedSku from "./components/customer/modal/LinkedSku";
+import { useAuthStore } from "./store/authStore";
+import CountryList from "./components/customer/modal/CountryList";
+import PromotionsPage from "./pages/PromotionsPage";
+import Sku_category from "./customer_home_page/others/sku_category";
+import SkuDetails from "./customer_home_page/others/SkuDetails";
+import All_Top_SKU from "./customer_home_page/others/All_Top_SKU";
 
 const AppContent = () => {
   const {
@@ -34,6 +40,7 @@ const AppContent = () => {
     isNotificitionsOn,
     isCoupanOn,
     linkedSKU,
+    isCountryList,
   } = useModal();
   useEffect(() => {
     const scrollToTop = () => {
@@ -47,32 +54,48 @@ const AppContent = () => {
       setTimeout(scrollToTop, 0);
     });
   }, []);
+
+  //
+  const { isAuthenticated } = useAuthStore();
+
+  //
   return (
     <>
       <Navbar />
       <Breadcrumb />
       <Routes>
-        <Route path="/" element={<Home />} />
+        {/* home page  */}
+        <Route
+          path="/"
+          element={isAuthenticated ? <Customer_Home /> : <Home />}
+        />
+        {/* profiles page */}
+        <Route path="/customers/:id" element={<Profile />} />
+        <Route path="/retailer" element={<Retailer />} />
+        {/* login / /signup */}
         <Route path="/create-account" element={<MultiStepForm />} />
 
-        <Route path="/purchase" element={<Purchase />} />
+        {/* products */}
         <Route path="/products" element={<Products />} />
         <Route path="/products/:id" element={<Product_Details />} />
         <Route path="/coupan-details" element={<CoupanDetails />} />
-
         <Route path="/sku-list" element={<SKULIST />} />
-
-        <Route path="/customers" element={<Customer_Home />} />
         <Route path="/customers/category" element={<CategoryDetail />} />
         <Route
           path="/customers/promtoion-details"
           element={<PromotionDetail />}
         />
+        <Route path="/promotions" element={<PromotionsPage />} />
+        <Route path="/sku-category" element={<Sku_category />} />
+        <Route path="/sku-details" element={<SkuDetails />} />
+        <Route path="/All-Top-SKU" element={<All_Top_SKU />} />
 
-        <Route path="/customers/:id" element={<Profile />} />
-        <Route path="/retailer" element={<Retailer />} />
+        {/* purchase */}
+        <Route path="/purchase" element={<Purchase />} />
       </Routes>
+
       <Footer />
+
       {/* Modals */}
       {isRoleModalOpen && <Role />}
       {isConnectWalletModalOpen && <ConnectWallet />}
@@ -81,6 +104,7 @@ const AppContent = () => {
       {isTokenOpen && <TokensModal />}
       {isCoupanOn && <CoupanModal />}
       {linkedSKU && <LinkedSku />}
+      {isCountryList && <CountryList />}
     </>
   );
 };

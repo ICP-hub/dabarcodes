@@ -6,25 +6,25 @@ import Hamburger from "../../reusable_components/Hamburger";
 import Sidebar from "../../reusable_components/Sidebar";
 import Button from "../../reusable_components/Button";
 import { useModal } from "../../context/ModalContext";
-import { useAuthStore } from "../../../../store/authStore";
 import IconBar from "../../reusable_components/IconBar";
 import Search from "../../reusable_components/Search";
+import { useAuthStore } from "../../store/authStore";
 
 const NotLogin = [
   { label: "Home", route: "#home" },
   { label: "About us", route: "#about" },
-  { label: "Services", route: "/" },
-  { label: "For retailers", route: "/retailer" },
+  { label: "Services", route: "#customer" },
+  { label: "For retailers", route: "#retailer" },
   { label: "For suppliers", route: "#supplier" },
-  { label: "Subscription", route: "/purchase" },
+  { label: "Subscription", route: "#purchase" },
   { label: "Testimonials", route: "#testimonials" },
   { label: "Our Partners", route: "#partners" },
 ];
 
 const Login = [
-  { label: "Categories", route: "/customers/category" },
-  { label: "Promotions ", route: "/customers/promtoion-details" },
-  { label: "Linked SKUs", route: "/sku-list" },
+  { label: "Categories", route: "/sku-list" },
+  { label: "Promotions ", route: "/promotions" },
+  { label: "Linked SKUs", route: "/customers/my-linked-skus" },
 ];
 
 const Navbar = ({ navItems, headerChildren, sidebarChildren }) => {
@@ -34,12 +34,13 @@ const Navbar = ({ navItems, headerChildren, sidebarChildren }) => {
   const openSidebar = () => setIsSidebarOpen(true);
 
   const {
-    openRoleModal,
+    openConnectWalletModal,
     isRoleModalOpen,
     isConnectWalletModalOpen,
     isTokenOpen,
     isProfileModalOpen,
     isNotificitionsOn,
+    openCountryList,
   } = useModal();
 
   useEffect(() => {
@@ -48,7 +49,8 @@ const Navbar = ({ navItems, headerChildren, sidebarChildren }) => {
       isRoleModalOpen ||
       isTokenOpen ||
       isProfileModalOpen ||
-      isNotificitionsOn
+      isNotificitionsOn ||
+      openCountryList
     ) {
       setIsSidebarOpen(false);
     }
@@ -74,7 +76,7 @@ const Navbar = ({ navItems, headerChildren, sidebarChildren }) => {
 
       {!isAuthenticated ? (
         <Button
-          onClick={openRoleModal}
+          onClick={openConnectWalletModal}
           divClassName="hidden xl:flex"
           buttonClassName="ml-[28px]"
         >
