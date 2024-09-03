@@ -12,13 +12,12 @@ const MyLinkedSKUs = () => {
 
     "Fresh Meat",
     "Dairy Products ",
-  ]; // Example labels
+  ];
   const colors = [
     { background: "#F1E7FE", border: "#F1E7FE" }, // Color for "Frozen Food"
     { background: "#F1E3D6", border: "#F1E3D6" }, // Color for "Shelf Stable Food"
     { background: "#D5F7C5", border: "#D5F7C5" }, // Color for "Fruits and Vegetables"
     { background: "#FED3D2", border: "#FED3D2" }, // Color for "Fresh Meat"
-
     { background: "#F7F4EC", border: "#F7F4EC" }, // Color for "Dairy Products"
   ];
   const centerText = {
@@ -56,7 +55,7 @@ const MyLinkedSKUs = () => {
           </ul>
         </div>
       </div>
-      <div>
+      <div className="">
         <Product isLinked={true} data={products} />
       </div>
     </>

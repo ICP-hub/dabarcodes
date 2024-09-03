@@ -488,3 +488,274 @@ export const Items = [
     isExpiring: true,
   },
 ];
+
+//
+export const productData = [
+  {
+    id: 1,
+    image: "Drinks.webp.png",
+    discountText: "$15 off",
+    name: "Nestle Ice Coffe",
+    price: "$37",
+    originalPrice: "$52",
+    weight: "500g Pouch",
+    description:
+      "Super smooth and creamy vanilla   half and half crowned with s...",
+    promotion: "Valid untill 2024, Sept 19",
+    promotedBy: "Lingo Pvt LTD.",
+    others: "+3 others",
+  },
+
+  {
+    id: 2,
+    image: "Drinks.webp.png",
+    discountText: "$15 off",
+    name: "Nestle Ice Coffe",
+    price: "$37",
+    originalPrice: "$52",
+    weight: "500g Pouch",
+    description:
+      "Super smooth and creamy vanilla half and half crowned with s...",
+    promotion: "Valid untill 2024, Sept 19",
+    promotedBy: "Lingo Pvt LTD.",
+    others: "+3 others",
+  },
+  {
+    id: 3,
+    image: "Drinks.webp.png",
+    discountText: "$15 off",
+    name: "Nestle Ice Coffe",
+    price: "$37",
+    originalPrice: "$52",
+    weight: "500g Pouch",
+    description:
+      "Super smooth and creamy vanilla half and half crowned with s...",
+    promotion: "Valid untill 2024, Sept 19",
+    promotedBy: "Lingo Pvt LTD.",
+    others: "+3 others",
+  },
+  {
+    id: 4,
+    image: "Drinks.webp.png",
+    discountText: "$15 off",
+    name: "Nestle Ice Coffe",
+    price: "$37",
+    originalPrice: "$52",
+    weight: "500g Pouch",
+    description:
+      "Super smooth and creamy vanilla half and half crowned with s...",
+    promotion: "Valid untill 2024, Sept 19",
+    promotedBy: "Lingo Pvt LTD.",
+    others: "+3 others",
+  },
+  {
+    id: 5,
+    image: "Drinks.webp.png",
+    discountText: "$15 off",
+    name: "Nestle Ice Coffe",
+    price: "$37",
+    originalPrice: "$52",
+    weight: "500g Pouch",
+    description:
+      "Super smooth and creamy vanilla half and half crowned with s...",
+    promotion: "Valid untill 2024, Sept 19",
+    promotedBy: "Lingo Pvt LTD.",
+    others: "+3 others",
+  },
+  {
+    id: 8,
+    image: "Drinks.webp.png",
+    discountText: "$15 off",
+    name: "Nestle Ice Coffe",
+    price: "$37",
+    originalPrice: "$52",
+    weight: "500g Pouch",
+    description:
+      "Super smooth and creamy vanilla half and half crowned with s...",
+    promotion: "Valid untill 2024, Sept 19",
+    promotedBy: "Lingo Pvt LTD.",
+    others: "+3 others",
+  },
+  {
+    id: 6,
+    image: "Drinks.webp.png",
+    discountText: "$15 off",
+    name: "Nestle Ice Coffe",
+    price: "$37",
+    originalPrice: "$52",
+    weight: "500g Pouch",
+    description:
+      "Super smooth and creamy vanilla half and half crowned with s...",
+    promotion: "Valid untill 2024, Sept 19",
+    promotedBy: "Lingo Pvt LTD.",
+    others: "+3 others",
+  },
+  {
+    id: 7,
+    image: "Drinks.webp.png",
+    discountText: "$15 off",
+    name: "Nestle Ice Coffe",
+    price: "$37",
+    originalPrice: "$52",
+    weight: "500g Pouch",
+    description:
+      "Super smooth and creamy vanilla half and half crowned with s...",
+    promotion: "Valid untill 2024, Sept 19",
+    promotedBy: "Lingo Pvt LTD.",
+    others: "+3 others",
+  },
+];
+
+export const ComboOffers = [
+  {
+    id: 1,
+    image: "Drinks.webp.png",
+    discountText: "$15 off",
+    name: "Nestle Ice Coffe",
+    price: "$37",
+    originalPrice: "$52",
+    weight: "500g Pouch",
+    description:
+      "Super smooth and creamy vanilla   half and half crowned with s...",
+    promotion: "Valid untill 2024, Sept 19",
+    promotedBy: "Lingo Pvt LTD.",
+    others: "+3 others",
+  },
+  {
+    id: 2,
+    image: "Drinks.webp.png",
+    discountText: "$15 off",
+    name: "Nestle Ice Coffe",
+    price: "$37",
+    originalPrice: "$52",
+    weight: "500g Pouch",
+    description:
+      "Super smooth and creamy vanilla   half and half crowned with s...",
+    promotion: "Valid untill 2024, Sept 19",
+    promotedBy: "Lingo Pvt LTD.",
+    others: "+3 others",
+  },
+];
+
+export const category = [
+  {
+    img: "Cagtegory.png",
+    alt: "Description of Image 1",
+    name: "Snacks",
+  },
+  { img: "Cagtegory.png", alt: "Description of Image 1", name: "Beverages" },
+  {
+    img: "Cagtegory.png",
+    alt: "Description of Image 1",
+    name: "Meat Products",
+  },
+  { img: "Cagtegory.png", alt: "Description of Image 1", name: "Frozen Food" },
+  {
+    img: "Cagtegory.png",
+    alt: "Description of Image 1",
+    name: "Sea Food",
+  },
+
+  {
+    img: "Cagtegory.png",
+    alt: "Description of Image 1",
+    name: "Oil Products",
+  },
+  {
+    img: "Cagtegory.png",
+    alt: "Description of Image 1",
+    name: "Fruits and Vegetables",
+  },
+  {
+    img: "Cagtegory.png",
+    alt: "Description of Image 1",
+    name: "Baby Food",
+  },
+  { img: "Cagtegory.png", alt: "Description of Image 1", name: "Frozen Food" },
+  {
+    img: "Cagtegory.png",
+    alt: "Description of Image 1",
+    name: "Sea Food",
+  },
+
+  {
+    img: "Cagtegory.png",
+    alt: "Description of Image 1",
+    name: "Oil Products",
+  },
+  {
+    img: "Cagtegory.png",
+    alt: "Description of Image 1",
+    name: "Fruits and Vegetables",
+  },
+  {
+    img: "Cagtegory.png",
+    alt: "Description of Image 1",
+    name: "Baby Food",
+  },
+  { img: "Cagtegory.png", alt: "Description of Image 1", name: "Frozen Food" },
+  {
+    img: "Cagtegory.png",
+    alt: "Description of Image 1",
+    name: "Sea Food",
+  },
+];
+
+export const Shops = [
+  {
+    id: 1,
+    image: "nutella.png",
+    shopName: "Urban Grocers",
+    address: "132 Elm Street,Downtown",
+    timing: "9:00 am - 11:00 am",
+    promotions: "5",
+  },
+  {
+    id: 2,
+    image: "nutella.png",
+    shopName: "Urban Grocers",
+    address: "132 Elm Street,Downtown",
+    timing: "9:00 am - 11:00 am",
+    promotions: "5",
+  },
+  {
+    id: 3,
+    image: "nutella.png",
+    shopName: "Urban Grocers",
+    address: "132 Elm Street,Downtown",
+    timing: "9:00 am - 11:00 am",
+    promotions: "5",
+  },
+  {
+    id: 4,
+    image: "nutella.png",
+    shopName: "Urban Grocers",
+    address: "132 Elm Street,Downtown",
+    timing: "9:00 am - 11:00 am",
+    promotions: "5",
+  },
+  {
+    id: 5,
+    image: "nutella.png",
+    shopName: "Urban Grocers",
+    address: "132 Elm Street,Downtown",
+    timing: "9:00 am - 11:00 am",
+    promotions: "5",
+  },
+  {
+    id: 6,
+    image: "nutella.png",
+    shopName: "Urban Grocers",
+    address: "132 Elm Street,Downtown",
+    timing: "9:00 am - 11:00 am",
+    promotions: "5",
+  },
+  {
+    id: 7,
+    image: "nutella.png",
+    shopName: "Urban Grocers",
+    address: "132 Elm Street,Downtown",
+    timing: "9:00 am - 11:00 am",
+    promotions: "5",
+  },
+];

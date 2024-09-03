@@ -1,5 +1,51 @@
 import React from "react";
-import { FaLongArrowAltRight } from "react-icons/fa";
+import { HiArrowLongUp } from "react-icons/hi2";
+import { useModal } from "../../context/ModalContext";
+
+// Define card data
+const cardData = [
+  {
+    id: 1,
+    title: "Start Your Savings Journey",
+    imageSrc: "/image/image 50.png",
+    description: "Join as customer",
+  },
+  {
+    id: 2,
+    title: "Unlock Customer Insights",
+    imageSrc: "/image/image 51.png",
+    description: "Join as retailer",
+  },
+  {
+    id: 3,
+    title: "Promote Your Products Effortlessly",
+    imageSrc: "/image/image 52.png",
+    description: "Join as supplier",
+  },
+];
+
+// Card component
+const Card = ({ title, imageSrc, description }) => {
+  const { openConnectWalletModal } = useModal();
+
+  return (
+    <div className="w-full max-w-xs bg-blue-200 rounded-lg flex flex-col items-center justify-center p-4">
+      <p className="text-xl   Butler font-extrabold text-gray-800 text-center mb-4">
+        {title}
+      </p>
+      <img src={imageSrc} alt="card-image" className="w-full h-auto mb-4" />
+      <div
+        onClick={openConnectWalletModal}
+        className="flex items-center cursor-pointer"
+      >
+        <p className="text-base font-semibold Roboto text-gray-800">
+          {description}
+        </p>
+        <HiArrowLongUp className="ml-2 size-7 rotate-90 text-[#171717]" />
+      </div>
+    </div>
+  );
+};
 
 const DaBarcodesInfo = () => {
   return (
@@ -10,10 +56,10 @@ const DaBarcodesInfo = () => {
       <div className="flex flex-col gap-24 max-w-6xl">
         {/* Header Section */}
         <div className="flex flex-col items-center gap-10">
-          <h1 className="text-3xl font-extrabold text-gray-800 text-center">
+          <h1 className="Butler text-3xl font-extrabold text-gray-800 text-center">
             What is DaBarcodes
           </h1>
-          <p className="text-base font-normal text-gray-600 text-center">
+          <p className="text-base font-normal Roboto text-gray-600 text-center">
             daBarcodes bridges the gap between customers, suppliers, and
             retailers through a unique promotional platform. Whether you're here
             to save, promote, or analyze, daBarcodes offers the perfect
@@ -23,59 +69,14 @@ const DaBarcodesInfo = () => {
 
         {/* Boxes Section */}
         <div className="flex gap-24 flex-wrap justify-center">
-          {/* Small Box 1 */}
-          <div className="w-full max-w-xs bg-blue-200 rounded-lg flex flex-col items-center justify-center p-4">
-            <p className="text-lg font-bold text-gray-800 text-center mb-4">
-              Start Your Savings <br /> Journey
-            </p>
-            <img
-              src="/image/image 50.png"
-              alt="image"
-              className="w-full h-auto mb-4"
+          {cardData.map((card) => (
+            <Card
+              key={card.id}
+              title={card.title}
+              imageSrc={card.imageSrc}
+              description={card.description}
             />
-            <div className="flex items-center">
-              <p className="text-base font-semibold text-gray-800">
-                Join as customer
-              </p>
-              <FaLongArrowAltRight className="ml-2 text-blue-500" />
-            </div>
-          </div>
-
-          {/* Small Box 2 */}
-          <div className="w-full max-w-xs bg-blue-200 rounded-lg flex flex-col items-center justify-center p-4">
-            <p className="text-lg font-bold text-gray-800 text-center mb-4">
-              Unlock Customer <br /> Insights
-            </p>
-            <img
-              src="/image/image 51.png"
-              alt="image"
-              className="w-full h-auto mb-4"
-            />
-            <div className="flex items-center">
-              <p className="text-base font-semibold text-gray-800">
-                Join as retailer
-              </p>
-              <FaLongArrowAltRight className="ml-2 text-blue-500" />
-            </div>
-          </div>
-
-          {/* Small Box 3 */}
-          <div className="w-full max-w-xs bg-blue-200 rounded-lg flex flex-col items-center justify-center p-4">
-            <p className="text-lg font-bold text-gray-800 text-center mb-4">
-              Promote Your <br /> Products Effortlessly
-            </p>
-            <img
-              src="/image/image 52.png"
-              alt="image"
-              className="w-full h-auto mb-4"
-            />
-            <div className="flex items-center">
-              <p className="text-base font-semibold text-gray-800">
-                Join as supplier
-              </p>
-              <FaLongArrowAltRight className="ml-2 text-blue-500" />
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </div>

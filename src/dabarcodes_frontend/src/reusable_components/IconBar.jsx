@@ -3,6 +3,7 @@ import { useModal } from "../context/ModalContext";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { FaBell } from "react-icons/fa";
 import { IoMdPerson } from "react-icons/io";
+import { useAuthStore } from "../store/authStore";
 
 const IconBar = ({ className }) => {
   const [isEnlarged, setIsEnlarged] = useState(false);
@@ -14,7 +15,15 @@ const IconBar = ({ className }) => {
       }, 1000);
     }
   };
-  const { openProfile, openToken, openNotificitions } = useModal();
+  const { openProfile, openToken, openNotificitions, openCountryList } =
+    useModal();
+  //
+  const { selectedCountryCode, selectedCountryName, selectedCountryImage } =
+    useAuthStore((state) => ({
+      selectedCountryCode: state.selectedCountryCode,
+      selectedCountryName: state.selectedCountryName,
+      selectedCountryImage: state.selectedCountryImage,
+    }));
   return (
     <div className={`hover:cursor-pointer ${className}`}>
       <div className="flex justify-center items-center gap-1">
@@ -39,7 +48,7 @@ const IconBar = ({ className }) => {
         />
       </div>
 
-      <div className="pl-8 flex gap-8 justify-center items-center">
+      <div className="pl-8 flex gap-4 justify-center items-center">
         <FaBell
           onClick={openNotificitions}
           size={24}
@@ -50,6 +59,18 @@ const IconBar = ({ className }) => {
           size={24}
           className="text-[#0D90C1]"
         />
+        <div
+          onClick={openCountryList}
+          className="flex justify-center items-center gap-1 "
+        >
+          <img
+            className="w-6 rounded-full h-6"
+            src={selectedCountryImage}
+            alt={selectedCountryName}
+          />
+          <p>{selectedCountryCode}</p>
+          <MdKeyboardArrowDown className="text-[#171717]" size={32} />
+        </div>
       </div>
     </div>
   );

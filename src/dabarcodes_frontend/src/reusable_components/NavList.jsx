@@ -1,24 +1,29 @@
 import { Link, useNavigate } from "react-router-dom";
 
-const NavList = ({ items, className, isHR = false }) => {
+const NavList = ({ items, className, isHR = false, closeSidebar }) => {
   const navigate = useNavigate();
 
   const handleClick = (el) => {
     if (
+      el.route === "#home" ||
+      el.route === "#about" ||
+      el.route === "#retailer" ||
+      el.route === "#supplier" ||
+      el.route === "#purchase" ||
       el.route === "#testimonials" ||
       el.route === "#partners" ||
-      el.route === "#about" ||
-      el.route === "#supplier" ||
-      el.route === "#home"
+      el.route === "#customer"
     ) {
       // Scroll to the section smoothly if the route is for scrolling
       const targetElement = document.getElementById(el.route.substring(1));
       if (targetElement) {
         targetElement.scrollIntoView({ behavior: "smooth" });
+        closeSidebar();
       }
     } else {
       // Navigate to the route if it's a standard route
       navigate(el.route);
+      closeSidebar();
     }
   };
 

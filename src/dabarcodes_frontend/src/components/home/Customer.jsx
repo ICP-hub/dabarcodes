@@ -47,7 +47,7 @@ function Customer() {
     },
   ];
   return (
-    <>
+    <main id="customer">
       <Section
         bgColor="bg-white"
         header="For Customers"
@@ -60,7 +60,7 @@ function Customer() {
 
       {/*  */}
       <JoinSteps bgColor="bg-white" steps={stepsData} />
-    </>
+    </main>
   );
 }
 

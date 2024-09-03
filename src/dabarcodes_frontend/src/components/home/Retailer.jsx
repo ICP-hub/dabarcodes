@@ -46,7 +46,7 @@ const Retailer = () => {
     },
   ];
   return (
-    <main className="bg-[#DBF4FD] mt-8 sm:mt-32 pb-40">
+    <main id="retailer" className="bg-[#DBF4FD] mt-8 sm:mt-32 pb-40">
       <Section
         bgColor="bg-[#DBF4FD]"
         header="For Retailers"

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Sidebar from "../components/Retailers/Sidebar";
 import Dashboard from "../components/Retailers/dashboard/Dashboard";
 import PromotionManagement from "../components/Retailers/dashboard/PromotionManagement";
@@ -34,6 +34,18 @@ const Retailer = () => {
         return null;
     }
   };
+  useEffect(() => {
+    const scrollToTop = () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    };
+
+    requestAnimationFrame(() => {
+      setTimeout(scrollToTop, 0);
+    });
+  }, []);
   return (
     <>
       <div className=" ">

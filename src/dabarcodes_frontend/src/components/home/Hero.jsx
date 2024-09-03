@@ -1,22 +1,28 @@
 import React from "react";
+import { useModal } from "../../context/ModalContext";
 
 const Hero = () => {
+  const { openConnectWalletModal } = useModal();
+
   return (
     <section id="home" className="bg-white top-[87px] ">
       <div className="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
         <div className="mr-auto place-self-center lg:col-span-7">
-          <h1 className="font-butler text-4xl sm:text-[61px] font-extrabold sm:leading-[73.2px] text-left">
-            Unlock Amazing <span className="text-[#0D90C1]">Discounts</span>{" "}
+          <h1 className="font-butler text-4xl sm:text-[61px] font-extrabold Butler sm:leading-[73.2px] text-left">
+            Unlock Amazing <span className="text-[#0D90C1]">Promotions</span>{" "}
             with daBarcodes
           </h1>
 
-          <p className="max-w-2xl mb-6 mt-6 text-black lg:mb-8 text-[20px] font-normal leading-[24px] text-left">
+          <p className="Roboto max-w-2xl mb-6 mt-6 text-black lg:mb-8 text-[20px] font-normal leading-[24px] text-left">
             Unlock access to exclusive promotions and unbeatable savings with
             daBarcodes. Experience a new level of shopping convenience and
             value.
           </p>
 
-          <a className="w-[152px] inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-white border border-gray-300 rounded-lg bg-[#0D90C1] hover:bg-[#0A6A9A]  ">
+          <a
+            onClick={openConnectWalletModal}
+            className="w-[152px] inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-white border border-gray-300 rounded-lg bg-[#0D90C1] hover:bg-[#0A6A9A] cursor-pointer  "
+          >
             Join Now
           </a>
         </div>

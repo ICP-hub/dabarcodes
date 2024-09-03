@@ -1,19 +1,29 @@
 import React from "react";
 
-import Weekly_Promotions from "../components/customer/Weekly_Promotions";
-import Category_Promotion from "../components/customer/Category_Promotion";
-import Today_Top_Promotion from "../components/customer/Today_Top_Promotion";
-import Upcoming from "../components/customer/Upcoming";
-import Current_Promotion from "../components/customer/Current_Promotion";
+import Top_SKU from "../customer_home_page/Top_SKU";
+import My_WishList from "../customer_home_page/My_WishList";
+import Linked_SKU from "../customer_home_page/Linked_SKU";
+import Top_skus from "../customer_home_page/Top_skus";
+import Upcoming_Offers from "../customer_home_page/Upcoming_Offers";
+import Explore_catagory from "../customer_home_page/Explore_catagory";
+import Combo_Offers from "../customer_home_page/Combo_Offers";
+import NearMERetailers from "../customer_home_page/NearMERetailers";
 
 const Customer_Home = () => {
   return (
     <>
-      <Weekly_Promotions />
-      <Category_Promotion />
-      <Today_Top_Promotion />
-      <Upcoming />
-      <Current_Promotion />
+      <Top_SKU />
+      <My_WishList />
+      <Linked_SKU />
+      <Explore_catagory />
+      <Top_skus />
+      <Upcoming_Offers />
+      <div className=" hide-scrollbar flex overflow-x-auto">
+        <Combo_Offers />
+        <Combo_Offers />
+      </div>
+      <NearMERetailers />
+      {/* old ui */}
     </>
   );
 };

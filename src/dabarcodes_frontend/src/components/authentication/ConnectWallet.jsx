@@ -1,18 +1,17 @@
 import React from "react";
 import Modal from "../../reusable_components/Modal";
 import { useModal } from "../../context/ModalContext";
-import { useAuthStore } from "../../../../store/authStore";
+import { useAuthStore } from "../../store/authStore";
 
 const ConnectWallet = () => {
-  const { closeConnectWalletModal } = useModal();
-  const { login } = useAuthStore();
+  const { closeConnectWalletModal, openRoleModal } = useModal();
   const handleConnectWalletImageClick = (name) => {
     console.log(`Connect Wallet image clicked: ${name}`);
   };
 
   const handleConnectWalletButtonClick = () => {
     closeConnectWalletModal();
-    login();
+    openRoleModal();
   };
 
   const handleEmailChange = (email) => {

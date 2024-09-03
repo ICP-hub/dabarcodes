@@ -36,7 +36,7 @@ export const category = [
 ];
 import { Link } from "react-router-dom";
 
-const basePath = "/public/category";
+const basePath = "/category";
 const Category_Promotion = () => {
   return (
     <>
