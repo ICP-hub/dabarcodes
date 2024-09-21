@@ -1,8 +1,50 @@
 type Result = variant { Ok : text; Err : text };
 type Result_1 = variant { Ok : UserProfile; Err : text };
-type UserProfile = record { name : text };
+type UserProfile = record { 
+  name : text;
+  pronouns: text;
+  date: nat64;
+  ethnicity: text;
+  primary_language: text;
+  phone_number: text;
+  email_address: text;
+  country: text;
+  state: text;
+  city: text;
+  postal_code: text;
+  time_at_this_address: text;
+  retailer_preferences: text;
+  influencer_referral_id: opt text;
+  gender_biological: opt text;
+  gender_identity: opt text; 
+  citizenship: opt text;
+  income: opt nat64;
+  married: opt text;
+  spouse_name: opt text;
+  with_children: opt text;
+  age_group: opt text;
+  include_maid_name: opt text;
+  maid_name: opt text;
+  total_number_in_household: opt text;
+  privacy_preference: text;
+  password: text;
+  };
+
+   type SkuDetails=record {
+     name: text;
+     brand:text;
+     flavor:text;
+     consistency:text;
+     item_weight:text;
+     price:text;
+     active_promo: nat64;
+     promo_by:text;
+     description:text;
+     select_retailer:vec principal;
+     owner:principal;
+};
 service : {
   api_create_account : (UserProfile) -> (Result);
   api_get_my_account : () -> (Result_1) query;
-  greet : (text) -> (text) query;
+  api_update_account: (UserProfile)->(Result);
 }

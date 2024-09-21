@@ -1,18 +1,9 @@
 use store::storage_state::ApplicationState;
-
 mod api;
 mod models;
 mod store;
 mod utils;
 
-#[ic_cdk::query]
-fn greet(name: String) -> String {
-    format!(
-        "Hello, {}! from {}",
-        name,
-        crate::utils::constants::ESSENTIALS_APP_NAME
-    )
-}
 
 thread_local! {
     static STATE: std::cell::RefCell<ApplicationState> = std::cell::RefCell::new(ApplicationState::new());

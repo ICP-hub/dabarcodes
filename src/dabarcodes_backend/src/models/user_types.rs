@@ -7,6 +7,33 @@ use serde::{Deserialize, Serialize};
 #[derive(Clone, CandidType, PartialEq, Debug, Serialize, Deserialize)]
 pub(crate) struct UserProfile {
     pub name: String,
+    pub pronouns: String,
+    pub date: u64,
+    pub ethnicity: String,
+    pub primary_language: String,
+    pub phone_number: String,
+    pub email_address: String,
+    pub country: String,
+    pub state: String,
+    pub city: String,
+    pub postal_code: String,
+    pub time_at_this_address: String,
+    pub retailer_preferences: String,
+    pub influencer_referral_id:Option<String>,
+    pub gender_biological:Option<String>,
+    pub gender_identity:Option<String>,
+    pub citizenship:Option<String>,
+    pub income:Option<u64>,
+    pub married:Option<String>,
+    pub spouse_name:Option<String>,
+    pub with_children:Option<String>,
+    pub age_group:Option<String>,
+    pub include_maid_name:Option<String>,
+    pub maid_name:Option<String>,
+    pub total_number_in_household:Option<String>,
+    pub privacy_preference: String,
+    pub password: String,
+    // pub sku_list: Option<HashMap<String,String>>,
     // add all the fields required
 }
 
