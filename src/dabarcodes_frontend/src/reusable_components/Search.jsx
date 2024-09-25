@@ -2,6 +2,7 @@ const Search = ({ className }) => {
   return (
     <div className={`relative w-72 ${className}`}>
       <input
+        name="global_input"
         type="text"
         className="peer w-full h-10 bg-transparent text-blue-gray-700 font-sans font-normal outline-none border border-[#B4B1B4] rounded-[7px] pl-3 pr-10 py-2.5 text-sm placeholder-gray-500"
         placeholder="Search"

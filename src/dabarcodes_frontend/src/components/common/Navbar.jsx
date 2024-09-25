@@ -22,9 +22,9 @@ const NotLogin = [
 ];
 
 const Login = [
-  { label: "Categories", route: "/sku-list" },
-  { label: "Promotions ", route: "/promotions" },
-  { label: "Linked SKUs", route: "/customers/my-linked-skus" },
+  { label: "Categories", route: "/sku-category" },
+  { label: "Brands ", route: "/brands" },
+  { label: "Linked SKUs", route: "/user/my-skus" },
 ];
 
 const Navbar = ({ navItems, headerChildren, sidebarChildren }) => {
@@ -67,6 +67,7 @@ const Navbar = ({ navItems, headerChildren, sidebarChildren }) => {
       <Logo />
 
       <NavList
+        closeSidebar={closeSidebar}
         items={isAuthenticated ? Login : NotLogin}
         isHR={false}
         className="hidden xl:flex justify-center items-center gap-[40px] text-[16px] font-roboto font-normal leading-[19.2px] text-left text-black"

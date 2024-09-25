@@ -1,9 +1,18 @@
 import { FaDirections } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 const Shop_card = ({ datas }) => {
+  const navigate = useNavigate();
+
+  const handleGetDirectionsClick = (shopName) => {
+    // Replace spaces with hyphens or handle the name formatting as needed
+    const formattedName = shopName.replace(/\s+/g, "-").toLowerCase();
+    navigate(`/store/${formattedName}`);
+  };
   return (
     <>
       {datas.map((data) => (
         <div
+          onClick={() => handleGetDirectionsClick(data.shopName)}
           className="border md:min-w-[378px] px-4 py-6 rounded-xl shadow-lg"
           key={data.id}
         >

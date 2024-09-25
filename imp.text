@@ -1,0 +1,14 @@
+{/* profiles page */}
+        {/* <Route path="/customers/:id" element={<Profile />} /> */}
+        {/* products */}
+        {/* <Route path="/products" element={<Products />} /> */}
+        {/* <Route path="/products/:id" element={<Product_Details />} /> */}
+        {/* <Route path="/coupan-details" element={<CoupanDetails />} /> */}
+        {/* <Route path="/sku-list" element={<SKULIST />} /> */}
+        {/* <Route path="/customers/category" element={<CategoryDetail />} /> */}
+        {/* <Route
+          path="/customers/promtoion-details"
+          element={<PromotionDetail />}
+        /> */}
+        {/* <Route path="/promotions" element={<PromotionsPage />} /> */}
+        {/* <Route path="/purchase" element={<Purchase />} /> */}

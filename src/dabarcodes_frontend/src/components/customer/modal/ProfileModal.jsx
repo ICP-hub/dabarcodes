@@ -23,13 +23,11 @@ const ProfileModal = () => {
         onClick={closeProfile}
         className="flex flex-col gap-2 text-black font-semibold"
       >
-        <Link to="/customers/profile">Profile</Link>
-        <Link to="/customers/subscription-management">
-          Subscription Management
-        </Link>
-        <Link to="/customers/my-linked-skus">My Linked SKUs</Link>
-        <Link to="/customers/promotional-coupons">Promotional Coupons</Link>
-        <Link to="/customers/utility-tokens">Utility Tokens</Link>
+        <Link to="/user/profile">Profile</Link>
+        <Link to="/user/subscription">Subscription Management</Link>
+        <Link to="/user/my-skus">My Linked SKUs</Link>
+        <Link to="/user/settings">Settings</Link>
+        <Link to="/user/my-utility-tokens">Utility Tokens</Link>
       </div>
       <button
         onClick={LogOut}

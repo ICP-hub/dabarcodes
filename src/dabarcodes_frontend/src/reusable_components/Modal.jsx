@@ -6,20 +6,10 @@ const Modal = ({
   headerText,
   buttonText,
   images,
-  showOr = false,
-  showSearch = false,
+
   onImageClick,
   onButtonClick,
-  onEmailChange,
 }) => {
-  const { isConnectWalletModalOpen, isRoleModalOpen } = useModal();
-  // useEffect(() => {
-  //   if (isConnectWalletModalOpen || isRoleModalOpen) {
-  //     document.body.style.overflow = "hidden"; // Prevent scrolling when modal is open
-  //   } else {
-  //     document.body.style.overflow = "unset"; // Restore scrolling when modal is closed
-  //   }
-  // }, [isConnectWalletModalOpen, isRoleModalOpen]);
   const handleOutsideClick = (e) => {
     if (e.target.id === "modal-overlay") {
       onClose();
@@ -61,23 +51,7 @@ const Modal = ({
             </tbody>
           </table>
         </div>
-        {showOr && (
-          <div className="flex flex-row justify-between items-center text-center">
-            <hr className="w-[45%] ml-8 border-t-2 border-gray-500" />
-            <span className="mx-2 font-bold">OR</span>
-            <hr className="w-[45%] mr-8 border-t-2 border-gray-500" />
-          </div>
-        )}
-        {showSearch && (
-          <div className="px-4 py-2">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              onChange={(e) => onEmailChange(e.target.value)}
-              className="w-full rounded-md border border-gray-300 px-3 py-2"
-            />
-          </div>
-        )}
+
         <div className="p-8 text-center">
           <button
             onClick={onButtonClick}

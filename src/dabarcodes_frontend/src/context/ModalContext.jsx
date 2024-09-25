@@ -23,6 +23,8 @@ export const ModalProvider = ({ children }) => {
   const [isNotificitionsOn, setIsNotificitionsOn] = useState(false);
   const [isCoupanOn, setIsCoupanOn] = useState(false);
   const [linkedSKU, setIsLinkedSKU] = useState(false);
+  const [isSingleQR, SetIsSingleQR] = useState(false);
+  const [isMultiQR, SetIsMultiQR] = useState(false);
 
   const openLinkedSKU = () => setIsLinkedSKU(true);
   const closeLinkedSKU = () => setIsLinkedSKU(false);
@@ -38,6 +40,12 @@ export const ModalProvider = ({ children }) => {
 
   const openCoupan = () => setIsCoupanOn(true);
   const closeCoupan = () => setIsCoupanOn(false);
+
+  const openQR = () => SetIsSingleQR(true);
+  const closeQR = () => SetIsSingleQR(false);
+
+  const openMultiQR = () => SetIsMultiQR(true);
+  const closeMultiQR = () => SetIsMultiQR(false);
 
   //
 
@@ -77,6 +85,14 @@ export const ModalProvider = ({ children }) => {
         isCountryList,
         openCountryList,
         closeCountryList,
+        //
+        isSingleQR,
+        openQR,
+        closeQR,
+        //
+        isMultiQR,
+        openMultiQR,
+        closeMultiQR,
       }}
     >
       {children}
