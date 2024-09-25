@@ -8,6 +8,7 @@ import Upcoming_Offers from "../customer_home_page/Upcoming_Offers";
 import Explore_catagory from "../customer_home_page/Explore_catagory";
 import Combo_Offers from "../customer_home_page/Combo_Offers";
 import NearMERetailers from "../customer_home_page/NearMERetailers";
+import MobileNavBar from "../components/common/MobileNavBar";
 
 const Customer_Home = () => {
   return (
@@ -18,11 +19,12 @@ const Customer_Home = () => {
       <Explore_catagory />
       <Top_skus />
       <Upcoming_Offers />
-      <div className=" hide-scrollbar flex overflow-x-auto">
+      <div className=" hide-scrollbar md:flex   overflow-x-auto">
         <Combo_Offers />
         <Combo_Offers />
       </div>
       <NearMERetailers />
+      <MobileNavBar />
       {/* old ui */}
     </>
   );

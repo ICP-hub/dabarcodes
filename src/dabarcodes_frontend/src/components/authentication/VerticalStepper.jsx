@@ -3,7 +3,7 @@ import Logo from "../../reusable_components/Logo";
 
 const VerticalStepper = ({ currentStep }) => {
   return (
-    <div className=" hidden md:block relative  bg-[#B5E8FB] rounded-lg">
+    <div className="w-[350px] hidden md:block relative  bg-[#B5E8FB] rounded-lg">
       <div className="ml-8 mr-8 mt-8">
         <Logo />
       </div>
@@ -16,6 +16,7 @@ const VerticalStepper = ({ currentStep }) => {
           "Contact Details",
           "Additional Details",
           "Privacy Preferences",
+          "Create Password",
         ].map((label, index) => (
           <li key={index} className="flex items-center mb-8 relative">
             {/* Circle with number or checkmark */}
@@ -39,7 +40,7 @@ const VerticalStepper = ({ currentStep }) => {
               {label}
             </span>
             {/* Line between steps */}
-            {index !== 3 && (
+            {index !== 4 && (
               <div
                 className={`absolute w-px top-10 left-3.5 transform -translate-x-1/2 z-0 ${
                   currentStep > index + 1 ? "bg-[#0D90C1]" : "bg-gray-400"

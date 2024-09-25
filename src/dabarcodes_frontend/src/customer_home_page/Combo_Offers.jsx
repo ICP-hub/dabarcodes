@@ -16,7 +16,7 @@ const Combo_Offers = () => {
             View All
           </Link>
         </div>
-        <div className=" flex   gap-4 mt-2 overflow-x-auto px-2 hide-scrollbar mb-8 md:mx-4">
+        <div className=" flex  md:flex-row flex-col items-center  gap-4 mt-2 overflow-x-auto px-2 hide-scrollbar mb-8 md:mx-4">
           <Product_card data={ComboOffers} />
         </div>
       </div>

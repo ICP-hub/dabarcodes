@@ -6,6 +6,7 @@ import HorizontalStepper from "./HorizontalStepper";
 import Step2 from "./Forms/Step2";
 import Step3 from "./Forms/Step3";
 import Step4 from "./Forms/Step4";
+import Step5 from "./Forms/Step5";
 const MultiStepForm = () => {
   const [currentStep, setCurrentStep] = useState(1);
   const [formData, setFormData] = useState({
@@ -14,12 +15,7 @@ const MultiStepForm = () => {
     finalDetails: {},
   });
 
-  const forms = [
-    <Step1 formData={formData} setFormData={setFormData} />,
-    <Step2 formData={formData} setFormData={setFormData} />,
-    <Step3 formData={formData} setFormData={setFormData} />,
-    <Step4 formData={formData} setFormData={setFormData} />,
-  ];
+  const totalSteps = 5;
 
   const handleNextStep = () => {
     setCurrentStep((prevStep) => Math.min(prevStep + 1, forms.length));
@@ -35,6 +31,42 @@ const MultiStepForm = () => {
     alert("Form submitted! Check the console.");
   };
 
+  const forms = [
+    <Step1
+      formData={formData}
+      setFormData={setFormData}
+      handleNextStep={handleNextStep}
+      currentStep={currentStep}
+      totalSteps={totalSteps}
+    />,
+    <Step2
+      formData={formData}
+      setFormData={setFormData}
+      handleNextStep={handleNextStep}
+      handlePrevStep={handlePrevStep}
+    />,
+    <Step3
+      formData={formData}
+      setFormData={setFormData}
+      handleNextStep={handleNextStep}
+      handlePrevStep={handlePrevStep}
+    />,
+    <Step4
+      formData={formData}
+      setFormData={setFormData}
+      handleNextStep={handleNextStep}
+      handlePrevStep={handlePrevStep}
+    />,
+    <Step5
+      formData={formData}
+      setFormData={setFormData}
+      handleSubmit={handleSubmit}
+      handlePrevStep={handlePrevStep}
+      currentStep={currentStep}
+      totalSteps={totalSteps}
+    />,
+  ];
+
   return (
     <div className="container mx-auto  p-6">
       <div className="flex gap-2 ">
@@ -45,7 +77,7 @@ const MultiStepForm = () => {
 
           {forms[currentStep - 1]}
 
-          <div
+          {/* <div
             className={`mt-4 flex ${
               currentStep > 1 ? "justify-between" : "justify-end"
             } `}
@@ -73,7 +105,7 @@ const MultiStepForm = () => {
                 Submit
               </button>
             )}
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

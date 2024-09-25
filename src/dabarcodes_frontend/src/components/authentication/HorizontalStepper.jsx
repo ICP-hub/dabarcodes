@@ -20,6 +20,7 @@ const HorizontalStepper = ({ currentStep }) => {
           "Contact Details",
           "Additional Details",
           "Privacy Preferences",
+          "Create Password",
         ].map((label, index, array) => (
           <div key={index} className="flex-1 flex items-center relative">
             {/* Circle with number or checkmark */}

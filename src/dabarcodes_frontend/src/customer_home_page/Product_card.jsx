@@ -12,6 +12,7 @@ const Product_card = ({ data }) => {
     <>
       {data.map((product) => (
         <div
+          key={product?.id}
           onClick={redirectToSkuDetails}
           className="border cursor-pointer p-4 max-w-[270px] min-w-[270px] border-[#FFCDD2] rounded-sm"
         >

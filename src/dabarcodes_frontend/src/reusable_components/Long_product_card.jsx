@@ -1,6 +1,14 @@
 import { CiBookmark } from "react-icons/ci";
 import { useNavigate } from "react-router-dom";
 
+const insertLineBreaks = (text, interval = 29) => {
+  const parts = [];
+  for (let i = 0; i < text.length; i += interval) {
+    parts.push(text.substring(i, i + interval));
+  }
+  return parts.join("<br />");
+};
+
 const Long_product_card = ({ Data }) => {
   const navigate = useNavigate();
 
@@ -13,13 +21,13 @@ const Long_product_card = ({ Data }) => {
         <div
           onClick={redirectToSkuDetails}
           key={product.id}
-          className="flex md:flex-row flex-col justify-center items-center gap-8 p-4 rounded-xl border border-[#E65100] md:min-w-[570px] min-w-[280px] cursor-pointer md:max-w-[570px]"
+          className="flex md:flex-row flex-col justify-center md:items-center gap-8 p-4 rounded-xl border border-[#E65100] md:min-w-[570px] min-w-[280px] cursor-pointer md:max-w-[570px]"
         >
-          <div>
+          <div className=" flex flex-col justify-center items-center">
             <img
               src={product.image}
               alt={product.name}
-              className="w-full h-auto"
+              className="w-[80px]  h-[80px]"
             />
             <div className="text-white rounded-sm mt-2 w-fit bg-[#B42700]">
               <p className="px-4 text-sm font-medium">{product.discountText}</p>
@@ -34,7 +42,15 @@ const Long_product_card = ({ Data }) => {
               </strike>
             </p>
             <p className="text-sm my-2 text-[#646464]">{product.weight}</p>
-            <p className="text-sm text-[#949494]">{product.description}</p>
+            <p
+              className="hidden md:block text-sm text-[#949494]"
+              dangerouslySetInnerHTML={{
+                __html: insertLineBreaks(product.description),
+              }}
+            ></p>
+            <p className="md:hidden text-sm text-[#949494]">
+              {product.description}
+            </p>
           </div>
           <div>
             <p className="text-base text-[#646464]">Active Promotion:</p>

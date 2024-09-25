@@ -9,6 +9,7 @@ export default {
       screens: {
         xs: { max: "378px" },
         suf: { min: "556px", max: "767px" },
+        sm_md: { min: "376px", max: "767px" },
       },
     },
   },
