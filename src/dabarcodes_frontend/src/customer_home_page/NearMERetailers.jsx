@@ -9,7 +9,7 @@ const NearMERetailers = () => {
     <>
       <div className=" border mb-12 rounded-md  mx-4">
         <div className="flex  mx-4  text-balance justify-between my-4 md:mx-8  font-semibold">
-          <p className="lg:text-[20px] ">Retailer near me</p>
+          <p className="md:text-xl text-base roboto-bold ">Retailer near me</p>
           <Link
             to="/all-retailers"
             className="cursor-pointer hover:underline decoration-[#0D90C1] underline-offset-8"

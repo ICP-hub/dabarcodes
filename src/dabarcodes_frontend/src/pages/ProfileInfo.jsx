@@ -1,12 +1,21 @@
-import React, { useEffect, useState } from "react";
+import React, { lazy, Suspense, useEffect, useState } from "react";
 import ProfileSidebar from "../components/profile/ProfileSidebar";
-import UserProfile from "../components/profile/UserProfile";
-import MySubscription from "../components/profile/MySubscription";
-import MyUtilityTokens from "../components/profile/MyUtilityTokens";
-import MySKUs from "../components/profile/MySKUs";
-import Settings from "../components/profile/Settings";
 import { useParams } from "react-router-dom";
+import Spinner from "../reusable_components/Spinner";
 
+//
+
+const UserProfile = lazy(() => import("../components/profile/UserProfile"));
+const MySubscription = lazy(() =>
+  import("../components/profile/MySubscription")
+);
+const MyUtilityTokens = lazy(() =>
+  import("../components/profile/MyUtilityTokens")
+);
+const MySKUs = lazy(() => import("../components/profile/MySKUs"));
+const Settings = lazy(() => import("../components/profile/Settings"));
+
+//
 const ProfileInfo = () => {
   const { id } = useParams();
   const [selectedLabel, setSelectedLabel] = useState(id || "Profile");
@@ -41,7 +50,9 @@ const ProfileInfo = () => {
           selectedLabel={selectedLabel}
           onSelectLabel={setSelectedLabel}
         />
-        <div className=" p-4">{renderContent()}</div>
+        <div className="p-4">
+          <Suspense fallback={<Spinner />}>{renderContent()}</Suspense>
+        </div>
       </div>
     </>
   );

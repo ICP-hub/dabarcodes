@@ -102,10 +102,17 @@ const Step3 = ({ formData, setFormData, handleNextStep, handlePrevStep }) => {
     <>
       <form onSubmit={handleSubmit(onSubmit)} className="p-4">
         {/* Additional Information */}
-        <h3 className="font-bold text-xl mb-4">Additional Information</h3>
+        <h3 className="roboto-bold text-base ">Additional Information</h3>
+        <div className="flex gap-2 items-center mt-2 mb-4">
+          <CiCircleQuestion />
+
+          <p className="text-[#454545] text-xs roboto-regular">
+            See why do we need this info?
+          </p>
+        </div>
         <div className="grid md:grid-cols-2 gap-4 mb-4">
           <div className="flex flex-col">
-            <label for="gender" className="text-sm  font-medium">
+            <label for="gender" className="text-sm required roboto-medium">
               Gender Biological
             </label>
             <select
@@ -134,7 +141,9 @@ const Step3 = ({ formData, setFormData, handleNextStep, handlePrevStep }) => {
           </div>
 
           <div className="flex flex-col">
-            <label className="text-sm font-medium">Gender Identity*</label>
+            <label className="text-sm required roboto-medium">
+              Gender Identity
+            </label>
             <select
               {...register("additionalInfo.genderIdentity", {
                 required: "Gender identity is required",
@@ -159,7 +168,9 @@ const Step3 = ({ formData, setFormData, handleNextStep, handlePrevStep }) => {
           </div>
 
           <div className="flex flex-col">
-            <label className="text-sm font-medium">Citizenship*</label>
+            <label className="text-sm required roboto-medium">
+              Citizenship
+            </label>
             <select
               {...register("additionalInfo.citizenship", {
                 required: "Citizenship is required",
@@ -184,7 +195,7 @@ const Step3 = ({ formData, setFormData, handleNextStep, handlePrevStep }) => {
           </div>
 
           <div className="flex flex-col relative">
-            <label className="text-sm font-medium">Income*</label>
+            <label className="text-sm required roboto-medium">Income</label>
             <div className="flex items-center border rounded">
               <span className="ml-2 my-2 w-16 ">USD $</span>
               <hr className="h-full border border-[#B4B1B4] "></hr>
@@ -208,15 +219,22 @@ const Step3 = ({ formData, setFormData, handleNextStep, handlePrevStep }) => {
             )}
           </div>
         </div>
-
         {/* Household Information */}
-        <h3 className="font-bold text-xl ">Household Information</h3>
-        <p className="text-sm mb-2">See why do we need this info?</p>
+        <h3 className="roboto-bold text-base ">Household Information</h3>
+        <div className="flex gap-2 items-center mt-2 mb-4">
+          <CiCircleQuestion />
+
+          <p className="text-[#454545] text-xs roboto-regular">
+            See why do we need this info?
+          </p>
+        </div>
         {/*  */}
         <div className="md:grid-cols-12 w-full gap-4   grid">
           <div className="md:col-span-6  ">
             <div className="md:flex  flex-col mb-4">
-              <label className="font-semibold mb-2">Married</label>
+              <label className="text-sm required roboto-medium mb-2">
+                Married
+              </label>
 
               <div className="">
                 <input
@@ -228,7 +246,7 @@ const Step3 = ({ formData, setFormData, handleNextStep, handlePrevStep }) => {
                   checked={watchMarried === "yes"}
                   className={` h-4 w-4 accent-[#0D90C1] rounded-md `}
                 />
-                <label> Yes</label>
+                <label className="text-base roboto-medium"> Yes</label>
                 <input
                   type="checkbox"
                   {...register("householdInfo.married")}
@@ -238,12 +256,14 @@ const Step3 = ({ formData, setFormData, handleNextStep, handlePrevStep }) => {
                   checked={watchMarried === "no"}
                   className={`mx-4 h-4 w-4 accent-[#0D90C1] rounded-md `}
                 />
-                <label>No</label>
+                <label className="text-base roboto-medium">No</label>
               </div>
             </div>
             {watchMarried === "yes" && (
               <div className="mb-4 flex flex-col">
-                <label className="mb-2 font-semibold">Spouse Name</label>
+                <label className="mb-2 text-sm roboto-medium">
+                  Spouse Name
+                </label>
                 <input
                   type="text"
                   {...register("householdInfo.spouseName", {
@@ -258,7 +278,9 @@ const Step3 = ({ formData, setFormData, handleNextStep, handlePrevStep }) => {
             )}
 
             <div className="md:flex flex-col  mb-4">
-              <label className="font-semibold mb-2">With Children</label>
+              <label className="text-sm required roboto-medium mb-2">
+                With Children
+              </label>
 
               <div>
                 <input
@@ -270,7 +292,7 @@ const Step3 = ({ formData, setFormData, handleNextStep, handlePrevStep }) => {
                   checked={watchHasChildren === "yes"}
                   className={` h-4 w-4 accent-[#0D90C1] rounded-md `}
                 />
-                <label className="ml-1">Yes</label>
+                <label className="text-base roboto-medium ml-1">Yes</label>
                 <input
                   type="checkbox"
                   {...register("householdInfo.hasChildren")}
@@ -280,14 +302,16 @@ const Step3 = ({ formData, setFormData, handleNextStep, handlePrevStep }) => {
                   checked={watchHasChildren === "no"}
                   className={`mx-4 h-4 w-4 accent-[#0D90C1] rounded-md `}
                 />
-                <label>No</label>
+                <label className="text-base roboto-medium ">No</label>
               </div>
             </div>
 
             <div className="mb-4">
               {watchHasChildren === "yes" && (
                 <div className="flex flex-col mb-4">
-                  <label className="text-sm mb-2 font-medium">Age Group</label>
+                  <label className="text-sm roboto-medium mb-2 ">
+                    Age Group
+                  </label>
                   <div>
                     <select
                       {...register("householdInfo.childrenAgeGroup")}
@@ -311,7 +335,7 @@ const Step3 = ({ formData, setFormData, handleNextStep, handlePrevStep }) => {
 
           <div className="md:col-span-6 ">
             <div className="md:flex flex-col mb-4">
-              <label className="text-sm mb-2 font-medium">
+              <label className="text-sm roboto-medium mb-2 ">
                 Include Maid’s Name
               </label>
               <div>
@@ -324,7 +348,8 @@ const Step3 = ({ formData, setFormData, handleNextStep, handlePrevStep }) => {
                   checked={watchHasMaid === "yes"}
                   className=" h-4 w-4 accent-[#0D90C1] rounded-md"
                 />
-                <label className="ml-2">Yes</label>
+
+                <label className="text-base roboto-medium ml-2">Yes</label>
                 <input
                   type="checkbox"
                   {...register("householdInfo.hasMaid")}
@@ -334,13 +359,13 @@ const Step3 = ({ formData, setFormData, handleNextStep, handlePrevStep }) => {
                   checked={watchHasMaid === "no"}
                   className="mx-2  h-4 w-4 accent-[#0D90C1] rounded-md"
                 />
-                <label>No</label>
+                <label className="text-base roboto-medium ">No</label>
               </div>
             </div>
 
             {watchHasMaid === "yes" && (
               <div className="mb-4 mt-7 flex flex-col">
-                <label className="text-sm mb-1 font-medium">Maid Name</label>
+                <label className="text-sm roboto-medium mb-1 ">Maid Name</label>
                 <input
                   type="text"
                   {...register("householdInfo.maidName")}
@@ -353,7 +378,7 @@ const Step3 = ({ formData, setFormData, handleNextStep, handlePrevStep }) => {
             )}
 
             <div className="mb-4 flex flex-col">
-              <label className="text-sm mb-1 font-medium">
+              <label className="text-sm roboto-medium mb-1 ">
                 Total Number of Household Members
               </label>
               <select
@@ -375,7 +400,9 @@ const Step3 = ({ formData, setFormData, handleNextStep, handlePrevStep }) => {
               <div className="flex gap-2 items-center mt-2">
                 <CiCircleQuestion />
 
-                <p className="text-sm text-[#454545]">See Who to Include</p>
+                <p className="text-[#454545] text-xs roboto-regular">
+                  See Who to Include
+                </p>
               </div>
             </div>
           </div>
@@ -391,7 +418,7 @@ const Step3 = ({ formData, setFormData, handleNextStep, handlePrevStep }) => {
         </button>
         <button
           onClick={handleCheck}
-          className="bg-[#0D90C1] text-white px-8 p-2 rounded"
+          className="btn text-white px-8 p-2 rounded"
         >
           Next
         </button>

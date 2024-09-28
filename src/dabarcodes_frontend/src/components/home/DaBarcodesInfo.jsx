@@ -30,7 +30,7 @@ const Card = ({ title, imageSrc, description }) => {
 
   return (
     <div className="w-full max-w-xs bg-blue-200 rounded-lg flex flex-col items-center justify-center p-4">
-      <p className="text-xl   Butler font-extrabold text-gray-800 text-center mb-4">
+      <p className="text-xl    roboto-bold  text-gray-800 text-center mb-4">
         {title}
       </p>
       <img src={imageSrc} alt="card-image" className="w-full h-auto mb-4" />
@@ -38,9 +38,7 @@ const Card = ({ title, imageSrc, description }) => {
         onClick={openConnectWalletModal}
         className="flex items-center cursor-pointer"
       >
-        <p className="text-base font-semibold Roboto text-gray-800">
-          {description}
-        </p>
+        <p className="text-base roboto-medium   text-gray-800">{description}</p>
         <HiArrowLongUp className="ml-2 size-7 rotate-90 text-[#171717]" />
       </div>
     </div>
@@ -56,10 +54,10 @@ const DaBarcodesInfo = () => {
       <div className="flex flex-col gap-24 max-w-6xl">
         {/* Header Section */}
         <div className="flex flex-col items-center gap-10">
-          <h1 className="Butler text-3xl font-extrabold text-gray-800 text-center">
+          <h1 className=" md:text-3xl text-2xl leading-6 roboto-bold  text-gray-800 text-center">
             What is DaBarcodes
           </h1>
-          <p className="text-base font-normal Roboto text-gray-600 text-center">
+          <p className="text-base roboto-regular  text-gray-600 text-center">
             daBarcodes bridges the gap between customers, suppliers, and
             retailers through a unique promotional platform. Whether you're here
             to save, promote, or analyze, daBarcodes offers the perfect

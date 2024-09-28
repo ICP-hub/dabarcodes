@@ -23,17 +23,17 @@ const UtilityTokens = () => {
             centerText={centerText}
           />
 
-          <div className="ml-4">
+          <div className="ml-4 roboto-bold text-base">
             <ul>
-              <li className="flex items-center">
-                <span className="inline-block w-3 h-3 rounded-full bg-[#07516C] mr-2"></span>
+              <li className="flex items-center text-[#07516C]">
+                <span className="inline-block w-3 h-3 rounded-full bg-[#07516C]  mr-2"></span>
                 Total utility tokens: {data[0] + data[1]}
               </li>
-              <li className="flex items-center">
+              <li className="flex items-center text-[#0C87B5]">
                 <span className="inline-block w-3 h-3 rounded-full bg-[#0C87B5] mr-2"></span>
                 Used utility tokens: {data[0]}
               </li>
-              <li className="flex items-center">
+              <li className="flex items-center text-[#10B4F1]">
                 <span className="inline-block w-3 h-3 rounded-full bg-[#10B4F1] mr-2"></span>
                 Unused utility tokens: {data[1]}
               </li>

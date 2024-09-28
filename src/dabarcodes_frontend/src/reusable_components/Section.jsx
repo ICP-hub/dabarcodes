@@ -24,7 +24,9 @@ const Section = ({
   return (
     <div className={`container p-4 md:p-16 ${bgColor}`}>
       <div className="text-center mb-14">
-        <h1 className="text-3xl font-bold text-gray-800">{header}</h1>
+        <h1 className="hidden md:block text-2xl md:text-3xl roboto-bold  text-gray-800">
+          {header}
+        </h1>
       </div>
       <div
         className={`grid grid-cols-1 md:grid-cols-2 gap-8 ${
@@ -35,31 +37,33 @@ const Section = ({
         <div
           className={`flex flex-col ${
             mainImagePosition === "right" ? "order-2" : "order-1"
-          } lg:flex-row space-y-8 lg:space-y-0 lg:space-x-8 `}
+          } lg:flex-row space-y-8  lg:space-y-0 lg:space-x-8 `}
         >
           {items.map((item, index) => (
             <div
               key={index}
-              className="flex flex-col items-center p-6 rounded-lg shadow-md lg:shadow-none"
+              className="flex flex-col md:items-center p-6 rounded-lg shadow-md md:border-none border lg:shadow-none"
             >
-              <div className="flex items-center justify-center w-16 h-16 mb-4">
+              <div className="flex items-center justify-center w-16 h-16 md:mb-4">
                 <img
                   src={item.image}
                   alt={item.alt}
-                  className="w-full h-full object-contain"
+                  className="md:w-full md:h-full w-8 h-8 object-contain"
                 />
               </div>
-              <h2 className="text-xl font-bold text-gray-800 mb-2 text-center">
+              <h2 className="md:text-xl text-base roboto-medium  text-gray-800 mb-2 md:text-center">
                 {item.title}
               </h2>
-              <p className="text-gray-600 text-center">{item.description}</p>
+              <p className="text-gray-600 roboto-regular md:text-base  md:text-center text-sm">
+                {item.description}
+              </p>
             </div>
           ))}
         </div>
 
         {/* Right Side */}
         <div
-          className={`hidden md:block flex-1 ${
+          className={` md:block flex-1 ${
             mainImagePosition === "right" ? "order-1" : "order-2"
           }`}
         >
@@ -72,6 +76,9 @@ const Section = ({
               className="w-full  h-auto object-cover mx-auto"
             />
           </div>
+          <h1 className="text-2xl md:hidden my-8 text-center md:text-3xl roboto-bold  text-gray-800">
+            {header}
+          </h1>
         </div>
       </div>
     </div>

@@ -37,8 +37,8 @@ const Role = () => {
         >
           &times;
         </button>
-        <header className="text-[#0D90C1] pt-16 text-center sm:text-2xl font-extrabold py-4 rounded-t-lg">
-          Choose your Role
+        <header className="text-2xl roboto-bold  pt-16 text-center  py-4 rounded-t-lg">
+          Tell us Who you are
         </header>
         <div className="sm:p-8 p-4 ">
           <table className="w-full border border-black rounded-lg border-separate border-spacing-0">
@@ -49,7 +49,7 @@ const Role = () => {
                   onClick={() => handleRoleImageClick("Customer")}
                 >
                   <img src="/customer.png" alt="Customer" className="mr-2" />
-                  <span className="font-bold">Customer</span>
+                  <span className="text-xl roboto-bold">Customer</span>
                 </td>
               </tr>
               <tr>
@@ -58,7 +58,7 @@ const Role = () => {
                   onClick={() => handleRoleImageClick("Retailer")}
                 >
                   <img src="/retailer.png" alt="Retailer" className="mr-2" />
-                  <span className="font-bold">Retailer</span>
+                  <span className="text-xl roboto-bold">Retailer</span>
                 </td>
               </tr>
               <tr>
@@ -67,7 +67,7 @@ const Role = () => {
                   onClick={() => handleRoleImageClick("Supplier")}
                 >
                   <img src="/supplier.png" alt="Supplier" className="mr-2" />
-                  <span className="font-bold">Supplier</span>
+                  <span className="text-xl roboto-bold">Supplier</span>
                 </td>
               </tr>
             </tbody>
@@ -76,7 +76,7 @@ const Role = () => {
         <div className="p-8 text-center">
           <button
             onClick={handleRoleButtonClick}
-            className="bg-[#0D90C1] text-white px-4 py-2 rounded-md w-full"
+            className="btn text-white px-4 py-2 rounded-md w-full"
           >
             Continue
           </button>

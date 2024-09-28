@@ -5,6 +5,7 @@ import { IoTime } from "react-icons/io5";
 import { SlDirections } from "react-icons/sl";
 import Product_card from "../customer_home_page/Product_card";
 import { productData } from "../components/customer/giftCarddata";
+import { useParams } from "react-router-dom";
 
 // StoreInfo component
 const StoreInfo = () => {
@@ -17,29 +18,51 @@ const StoreInfo = () => {
     storeAddress
   )}`;
 
+  const { name } = useParams();
+  const decodedStoreName = decodeURIComponent(name);
+
   return (
     <>
-      <div className="md:flex grid lg:mx-8 Roboto md:flex-row items-start md:items-start space-x-4 gap-8 rounded-md">
+      <div className="md:flex grid lg:mx-8  md:flex-row items-start md:items-start space-x-4 gap-8 rounded-md">
         {/* Store details */}
         <div className="flex flex-col p-8 flex-wrap space-y-4">
-          <h1 className="text-2xl font-extrabold mb-2">Store Name</h1>
-          <p className="flex items-center text-sm mb-1">
+          <h1 className="text-xl roboto-bold md:text-4xl mb-2">
+            {decodedStoreName.toUpperCase()}{" "}
+          </h1>
+          <p
+            className="flex items-center 
+text-base roboto-regular
+           mb-1"
+          >
             <span className="text-blue-500 mr-2">
               <FaMapMarkerAlt className="text-[#0D90C1]" size={20} />
             </span>
             {storeAddress}
           </p>
-          <p className="flex text-[#00B42A] items-center text-sm mb-1">
+          <p
+            className="flex text-[#00B42A] items-center 
+text-base roboto-medium
+           mb-1"
+          >
             <span className="text-[#0D90C1] mr-2">
               <IoTime className="text-[#0D90C1]" size={20} />
             </span>{" "}
-            Open<span className="text-black ml-2">- until 11 pm</span>
+            Open
+            <span
+              className="text-black 
+            text-base roboto-regular
+            ml-2"
+            >
+              - until 11 pm
+            </span>
           </p>
           <a
             href={googleMapsLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center text-sm underline"
+            className="flex items-center 
+text-base roboto-regular
+             underline"
           >
             <span className="mr-2">
               <SlDirections className="text-[#0D90C1]" size={20} />
@@ -74,7 +97,9 @@ const StoreOffers = () => {
     <>
       <div className=" mt-12 mb-12 rounded-md  mx-4">
         <div className="md:flex   mx-4  text-balance justify-between my-4 md:mx-8  font-semibold">
-          <p className="lg:text-[20px]  ">Available Products</p>
+          <p className="md:text-2xl text-xl roboto-bold  ">
+            Available Products
+          </p>
           <div className="flex gap-4 mt-2 md:mt-0 ">
             <Sort />
             <Filter />
@@ -82,7 +107,7 @@ const StoreOffers = () => {
           </div>
         </div>
         <div className=" md:grid lg:grid-cols-3 md:grid-cols-2 xl:grid-cols-4 gap-8  mt-8 flex flex-wrap items-center justify-center  px-2  mb-8 md:mx-4">
-          <Product_card data={productData} />
+          <Product_card data={productData.slice(0, 8)} />
         </div>
       </div>
     </>

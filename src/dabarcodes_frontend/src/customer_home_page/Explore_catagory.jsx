@@ -4,8 +4,10 @@ import { category } from "../components/customer/giftCarddata";
 const Explore_catagory = () => {
   return (
     <>
-      <div className="flex  mx-4  text-balance justify-between my-4 md:mx-8  font-semibold">
-        <p className="lg:text-[20px] ">Top SKUs</p>
+      <div className="flex  mx-4  text-balance justify-between my-4 md:mx-8  ">
+        <p className="md:text-xl text-base roboto-bold  ">
+          Explore By Category
+        </p>
         <Link
           to="/sku-category"
           className="cursor-pointer hover:underline decoration-[#0D90C1] underline-offset-8"

@@ -1,4 +1,15 @@
+import React, { useState, useRef, useEffect } from "react";
+import { CiBookmark } from "react-icons/ci";
+import { FaChevronDown } from "react-icons/fa";
+import Shop_card from "../../reusable_components/Shop_card";
+import { productData, Shops } from "../../components/customer/giftCarddata";
+import Product_card from "../Product_card";
+import { GoPerson } from "react-icons/go";
+import { useModal } from "../../context/ModalContext";
+
 const SkuDetails = () => {
+  const { openLinkItemModal } = useModal();
+
   return (
     <>
       <div className="md:grid   grid-cols-12 my-20 xl:mx-20 mx-8  ">
@@ -9,20 +20,20 @@ const SkuDetails = () => {
           {/*  */}
           <div className="w-[240px] ">
             <ul className="flex  justify-between  ">
-              <li className="text-md font-bold  ">Flavor Peanut</li>
-              <li className="">Strawberry</li>
+              <li className="text-sm roboto-bold  ">Flavor Peanut</li>
+              <li className="text-sm roboto-regular">Strawberry</li>
             </ul>
             <ul className="flex  justify-between  ">
-              <li className="text-md font-bold  ">Brand</li>
-              <li>Kwality wall’s</li>
+              <li className="text-sm roboto-bold ">Brand</li>
+              <li className="text-sm roboto-regular">Kwality wall’s</li>
             </ul>
             <ul className="flex  justify-between  ">
-              <li className="text-md font-bold  ">Speciality</li>
-              <li>Sweetened</li>
+              <li className="text-sm roboto-bold ">Speciality</li>
+              <li className="text-sm roboto-regular">Sweetened</li>
             </ul>
             <ul className="flex  justify-between  ">
-              <li className="text-md font-bold  ">Item Weight</li>
-              <li>0.47 kg</li>
+              <li className="text-sm roboto-bold ">Item Weight</li>
+              <li className="text-sm roboto-regular">0.47 kg</li>
             </ul>
           </div>
         </div>
@@ -31,36 +42,42 @@ const SkuDetails = () => {
         {/*  */}
         <div className="lg:col-span-9 md:mt-0 mt-8 md:col-span-7  md:ml-8 ">
           <div className="flex md:justify-between">
-            <p className="text-lg text-balance text-black font-bold">
+            <p className="text-xl  text-balance text-black roboto-bold">
               Nestle Ice Coffe
             </p>
 
             <div className="flex items-center  justify-end gap-4">
-              <div className="w-fit rounded-md mt-1 text-white bg-[#0D90C1]">
+              <div
+                onClick={openLinkItemModal}
+                className="w-fit rounded-md mt-1 text-white btn"
+              >
                 <button className="px-6 py-1">Link SKU</button>
               </div>
               <CiBookmark size={24} className="mt-1 text-[#6B696B]" />
             </div>
           </div>
           <div className="flex items-center gap-2">
-            <p className="text-[#0A6C91] font-normal text-base">
-              $37 <strike className="text-[#949494] text-sm">$52</strike>
+            <p className="text-[#0A6C91] roboto-regular  text-base">
+              $37{" "}
+              <strike className="text-[#949494] text-xs roboto-regular ">
+                $52
+              </strike>
             </p>
           </div>
-          <p className="text-sm  text-[#646464]">500g Pouch</p>
+          <p className="text-xs roboto-regular text-[#646464]">500g Pouch</p>
           <div className="mb-4 text-white rounded-sm mt-2 w-fit bg-[#B42700]">
-            <p className="px-4  text-sm font-medium">$15 off</p>
+            <p className="px-4  text-sm roboto-bold">$15 off</p>
           </div>
-          <p className="text-sm mb-2 font-bold text-[#0A6C91]">
+          <p className="text-xs mb-2 roboto-bold text-[#0A6C91]">
             Valid Untill 2024, sept 19
           </p>
           {/*  */}
-          <p className=" text-base text-[#646464]">Promoted By</p>
-          <p className="text-[#000000]  text-base font-bold">Urban Grocers</p>
-          <p className="text-base  text-[#646464]">+3 others</p>
+          <p className=" text-xs roboto-regular text-[#646464]">Promoted By</p>
+          <p className="text-[#000000]  text-sm roboto-medium">Urban Grocers</p>
+          <p className="text-xs roboto-regular  text-[#646464]">+3 others</p>
           <div className="lg:w-[420px]">
             <hr className=" mb-2 mt-2 border-t-[0.5px] border-[#6B696B]" />
-            <p className="font-normal text-sm Roboto">
+            <p className="f text-sm roboto-regular ">
               Super smooth and creamy vanilla half and half crowned with a rich,
               bold coffee essence, perfectly blended to deliver an indulgent and
               refreshing iced coffee experience.
@@ -74,7 +91,7 @@ const SkuDetails = () => {
       </div>
       {/*  */}
       <div className="xl:mx-20 mx-8 ">
-        <p className="text-xl  font-extrabold Roboto">
+        <p className="md:text-xl text-base   roboto-bold ">
           Participating Retailers
         </p>
 
@@ -84,7 +101,7 @@ const SkuDetails = () => {
       </div>
 
       <div>
-        <p className="text-xl text-center my-16 font-extrabold Roboto">
+        <p className="md:text-xl text-base text-center my-16 roboto-bold ">
           You might also likes
         </p>
         <div className=" flex mx-8  gap-4 mt-2 overflow-x-auto  hide-scrollbar mb-8 ">
@@ -96,14 +113,6 @@ const SkuDetails = () => {
 };
 
 export default SkuDetails;
-
-import React, { useState, useRef, useEffect } from "react";
-import { CiBookmark } from "react-icons/ci";
-import { FaUserCircle, FaChevronDown } from "react-icons/fa";
-import Shop_card from "../../reusable_components/Shop_card";
-import { productData, Shops } from "../../components/customer/giftCarddata";
-import Product_card from "../Product_card";
-import { GoPerson } from "react-icons/go";
 
 const DropdownSelect = () => {
   const [selectedItem, setSelectedItem] = useState(null);
@@ -144,9 +153,7 @@ const DropdownSelect = () => {
   return (
     <div className="w-64">
       <div className="relative" ref={dropdownRef}>
-        <p className="Roboto text-base font-extrabold">
-          Select Participating Retailer
-        </p>
+        <p className=" text-base roboto-bold">Select Participating Retailer</p>
         <div
           className={`${
             isOpen && "border-2"
@@ -190,7 +197,7 @@ const DropdownSelect = () => {
             ))}
           </div>
         ) : (
-          <p className="text-sm font-normal Roboto">See Retailer’s Details</p>
+          <p className="text-sm roboto-regular ">See Retailer’s Details</p>
         )}
       </div>
     </div>

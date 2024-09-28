@@ -81,9 +81,7 @@ const UserProfile = () => {
   return (
     <>
       <div>
-        <p className="text-base Roboto font-extrabold my-4">
-          Profile Completion
-        </p>
+        <p className="text-base  roboto-bold my-4">Profile Completion</p>
         {/*  */}
         <div className="flex suf:flex-row suf:items-center suf:gap-16 md:flex-row flex-col    md:items-center md:gap-28 gap-4">
           <div className="relative suf:w-[280px] w-[180px]      md:w-[300px] bg-[#DBF4FD] rounded-full h-4">
@@ -109,7 +107,7 @@ const UserProfile = () => {
       </div>
       {/*  */}
       <div className="pt-4 bg-white ">
-        <h1 className="text-xl Roboto font-extrabold">My Profile</h1>
+        <h1 className="text-xl md:text-2xl   roboto-bold">My Profile</h1>
         <H1 value={"Personal Information"} />
         <form onSubmit={handleSubmit}>
           <DIV>
@@ -392,7 +390,7 @@ const UserProfile = () => {
 export default UserProfile;
 
 const H1 = ({ value }) => {
-  return <h1 className="text-base my-4 Roboto font-extrabold">{value}</h1>;
+  return <h1 className="text-base my-4  roboto-bold">{value}</h1>;
 };
 
 const DIV = ({ children }) => {

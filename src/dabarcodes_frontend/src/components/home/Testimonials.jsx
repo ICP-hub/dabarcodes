@@ -68,14 +68,16 @@ const Testimonials = () => {
 
   return (
     <div id="testimonials" className="relative max-w-6xl mx-auto mb-24">
-      <h2 className="text-center text-3xl font-bold mb-8">Testimonials</h2>
-      <div className="flex space-x-8 overflow-hidden">
+      <h2 className="text-center md:text-3xl  text-2xl roboto-bold mb-8">
+        Testimonials
+      </h2>
+      <div className="flex space-x-8 overflow-hidden mx-4 md:mx-0">
         {testimonials
           .slice(currentIndex, currentIndex + showCount)
           .map((testimonial) => (
             <div
               key={testimonial.id}
-              className="bg-white rounded-lg shadow-lg p-8 flex space-x-6 w-full  transform transition-transform duration-700 ease-in-out sm:flex-row flex-col  items-center "
+              className="bg-white rounded-lg shadow-lg border p-8 flex space-x-6 w-full  transform transition-transform duration-700 ease-in-out sm:flex-row flex-col  items-center "
             >
               <img
                 src={testimonial.image}
@@ -83,14 +85,16 @@ const Testimonials = () => {
                 className="sm:w-48 sm:h-56 object-cover sm:rounded-lg w-24 h-24 rounded-full "
               />
               <div className="mt-2">
-                <p className="text-sm text-gray-500">{testimonial.date}</p>
-                <h3 className="text-lg sm:font-semibold">
+                <p className="text-sm text-[#525252] roboto-regular">
+                  {testimonial.date}
+                </p>
+                <h3 className="text-base roboto-medium text-[#646464]">
                   {testimonial.title}
                 </h3>
-                <p className="text-gray-600 text-sm sm:text-md mt-2">
+                <p className="text-[#646464] text-sm  roboto-regular  mt-2">
                   {testimonial.details}
                 </p>
-                <p className="text-gray-900 font-bold sm:mt-4">
+                <p className="text-[#646464] text-sm  roboto-medium sm:mt-4">
                   {testimonial.name}
                 </p>
               </div>
@@ -98,7 +102,7 @@ const Testimonials = () => {
           ))}
       </div>
 
-      <div className="flex justify-center items-center sm:mt-16 relative">
+      <div className="flex justify-center items-center mt-4 sm:mt-16 relative">
         <button
           onClick={prevSlide}
           disabled={currentIndex === 0}

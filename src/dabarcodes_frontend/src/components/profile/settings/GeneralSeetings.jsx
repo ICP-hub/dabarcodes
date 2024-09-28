@@ -62,22 +62,22 @@ const GeneralSeetings = ({ handleComponentSwitch }) => {
     <main>
       <div className="mb-4 flex-col flex gap-4">
         <div className="flex justify-between items-center">
-          <p className="text-2xl font-extrabold Roboto">Settings</p>
+          <p className="md:text-2xl text-xl roboto-bold ">Settings</p>
           {hasChanges && (
             <button
-              className="mt-4 px-4 py-1 bg-blue-500 text-white rounded"
+              className="mt-4 px-4 py-1 btn text-white rounded"
               onClick={handleSubmit}
             >
               Save Changes
             </button>
           )}
         </div>
-        <p className="text-lg font-extrabold Roboto">General Settings</p>
-        <p className="text-base font-extrabold Roboto">Language Preference</p>
+        <p className="md:text-xl text-base  roboto-bold ">General Settings</p>
+        <p className="text-base roboto-bold ">Language Preference</p>
       </div>
 
       <div className="mb-4">
-        <label htmlFor="language-select" className="text-sm font-medium">
+        <label htmlFor="language-select" className="text-sm roboto-medium">
           Select Your Preferred Language
         </label>
         <select
@@ -169,8 +169,8 @@ const GeneralSeetings = ({ handleComponentSwitch }) => {
       <hr className="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700" />
 
       <div className="mb-4 flex-col flex gap-4">
-        <p className="text-lg font-extrabold Roboto">Privacy and Security</p>
-        <p className="text-base font-extrabold Roboto">Login Activity</p>
+        <p className="text-lg roboto-bold ">Privacy and Security</p>
+        <p className="text-base roboto-bold ">Login Activity</p>
         <Device devices={deviceData} />
       </div>
 
@@ -181,8 +181,11 @@ const GeneralSeetings = ({ handleComponentSwitch }) => {
           checked={formData.dataPrivacy}
           onChange={() => handleSwitchChange("dataPrivacy")}
         />
-        <div className="mb-4">
-          <label htmlFor="privacy-select" className="text-sm font-medium">
+        <div className="mb-4 mt-4">
+          <label
+            htmlFor="privacy-select"
+            className="text-sm roboto-medium required"
+          >
             Privacy Preference
           </label>
           <select
@@ -206,24 +209,14 @@ const GeneralSeetings = ({ handleComponentSwitch }) => {
 
       <hr className="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700" />
 
-      <div className="Roboto space-y-4 font-extrabold text-base">
-        <p className="text-xl">Support and Feedback</p>
-        <div className="cursor-pointer flex justify-between items-center">
-          <p>Help Center</p>
-          <GrFormNext size={24} />
-        </div>
-        <div
-          onClick={() => handleComponentSwitch("contact")}
-          className="cursor-pointer flex justify-between items-center"
-        >
-          <p>Contact Support</p>
-          <GrFormNext size={24} />
-        </div>
+      <div className=" space-y-4  roboto-bold">
+        <p className="text-xl ">Support and Feedback</p>
+
         <div
           onClick={() => handleComponentSwitch("feedback")}
           className="cursor-pointer flex justify-between items-center"
         >
-          <p>Feedback</p>
+          <p className="text-base">Feedback</p>
           <GrFormNext size={24} />
         </div>
       </div>
@@ -256,11 +249,11 @@ const Checkbox = ({ id, label, text, checked, onChange, disabled }) => {
           disabled={disabled}
         />
       </div>
-      <div className="ms-2 text-sm Roboto">
-        <label htmlFor={id} className="font-semibold text-sm">
+      <div className="ms-2 text-sm ">
+        <label htmlFor={id} className="roboto-medium text-sm">
           {label}
         </label>
-        <p id={`${id}-text`} className="font-normal text-sm text-[#646464]">
+        <p id={`${id}-text`} className="roboto-regular text-sm text-[#646464]">
           {text}
         </p>
       </div>
@@ -271,7 +264,7 @@ const Checkbox = ({ id, label, text, checked, onChange, disabled }) => {
 const Switch = ({ id, text, checked, onChange }) => {
   return (
     <div className="flex justify-between">
-      <p className="text-sm font-extrabold Roboto">{text}</p>
+      <p className="text-base roboto-bold ">{text}</p>
       <label
         htmlFor={id}
         className="relative inline-flex cursor-pointer items-center"
@@ -295,17 +288,19 @@ const Device = ({ devices }) => {
       {devices.map((device, index) => (
         <div
           key={index}
-          className="border Roboto font-normal text-sm shadow-lg rounded-lg flex justify-between px-4 py-4"
+          className="border  font-normal text-sm shadow-lg rounded-lg flex justify-between px-4 py-4"
         >
           <div className="flex gap-2">
             <img src={device.imageSrc} alt="Device" className="" />
             <div className="md:whitespace-nowrap">
-              <p className="text-base font-extrabold">{device.sessionInfo}</p>
-              <p className="text-[#646464]">Login by: {device.loginBy}</p>
+              <p className="text-base roboto-bold">{device.sessionInfo}</p>
+              <p className="text-[#646464] text-sm roboto-regular">
+                Login by: {device.loginBy}
+              </p>
             </div>
           </div>
 
-          <div className="text-right">
+          <div className="text-right text-sm roboto-regular">
             <p>{device.operatingSystem}</p>
             <p>{device.location}</p>
             <p>{device.browser}</p>

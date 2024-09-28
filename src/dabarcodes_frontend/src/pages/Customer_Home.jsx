@@ -25,7 +25,6 @@ const Customer_Home = () => {
       </div>
       <NearMERetailers />
       <MobileNavBar />
-      {/* old ui */}
     </>
   );
 };

@@ -50,7 +50,7 @@ const EditableInput = ({
 
   return (
     <div className="mb-4">
-      <label className="block text-sm font-semibold mb-1" htmlFor={name}>
+      <label className="block text-sm roboto-medium mb-1" htmlFor={name}>
         {label}
       </label>
       {renderInput()}

@@ -64,10 +64,10 @@ const Step5 = ({ formData, setFormData, handleSubmit, handlePrevStep }) => {
   return (
     <>
       <form className="px-8">
-        <h3 className="font-bold text-xl mb-4">Setup Your Password</h3>
+        <h3 className="roboto-bold text-base mb-4">Setup Your Password</h3>
 
         <div className="flex flex-col mb-4">
-          <label className="text-sm font-medium">Password*</label>
+          <label className="text-sm roboto-medium required">Password</label>
           <input
             type={showPassword ? "text" : "password"}
             {...register("password", {
@@ -86,7 +86,9 @@ const Step5 = ({ formData, setFormData, handleSubmit, handlePrevStep }) => {
         </div>
 
         <div className="flex flex-col mb-4">
-          <label className="text-sm font-medium">Confirm Password*</label>
+          <label className="text-sm roboto-medium required">
+            Confirm Password
+          </label>
           <input
             type={showPassword ? "text" : "password"}
             {...register("confirmPassword", {
@@ -115,15 +117,17 @@ const Step5 = ({ formData, setFormData, handleSubmit, handlePrevStep }) => {
             onChange={() => setShowPassword((prev) => !prev)}
             className="mr-2"
           />
-          <label htmlFor="showPassword" className="text-sm font-medium">
+          <label htmlFor="showPassword" className="text-base roboto-medium">
             Show Password
           </label>
         </div>
 
-        <div className="mt-2 text-sm">
+        <p className="roboto-regular text-base">Password Strength</p>
+
+        <div className="mt-2 text-base font-regular">
           <p
             className={`flex items-center ${
-              passwordCriteria.length ? "text-green-500" : "text-red-500"
+              passwordCriteria.length ? "text-[#008C20]" : "text-[#B42700]"
             }`}
           >
             {passwordCriteria.length ? <Check size={20} /> : "•"} At least 12
@@ -131,7 +135,7 @@ const Step5 = ({ formData, setFormData, handleSubmit, handlePrevStep }) => {
           </p>
           <p
             className={`flex items-center ${
-              passwordCriteria.uppercase ? "text-green-500" : "text-red-500"
+              passwordCriteria.uppercase ? "text-[#008C20]" : "text-[#B42700]"
             }`}
           >
             {passwordCriteria.uppercase ? <Check size={20} /> : "•"} Include
@@ -139,7 +143,7 @@ const Step5 = ({ formData, setFormData, handleSubmit, handlePrevStep }) => {
           </p>
           <p
             className={`flex items-center ${
-              passwordCriteria.lowercase ? "text-green-500" : "text-red-500"
+              passwordCriteria.lowercase ? "text-[#008C20]" : "text-[#B42700]"
             }`}
           >
             {passwordCriteria.lowercase ? <Check size={20} /> : "•"} Include
@@ -147,7 +151,7 @@ const Step5 = ({ formData, setFormData, handleSubmit, handlePrevStep }) => {
           </p>
           <p
             className={`flex items-center ${
-              passwordCriteria.number ? "text-green-500" : "text-red-500"
+              passwordCriteria.number ? "text-[#008C20]" : "text-[#B42700]"
             }`}
           >
             {passwordCriteria.number ? <Check size={20} /> : "•"} Include at
@@ -155,7 +159,7 @@ const Step5 = ({ formData, setFormData, handleSubmit, handlePrevStep }) => {
           </p>
           <p
             className={`flex items-center ${
-              passwordCriteria.specialChar ? "text-green-500" : "text-red-500"
+              passwordCriteria.specialChar ? "text-[#008C20]" : "text-[#B42700]"
             }`}
           >
             {passwordCriteria.specialChar ? <Check size={20} /> : "•"} Include
@@ -172,7 +176,7 @@ const Step5 = ({ formData, setFormData, handleSubmit, handlePrevStep }) => {
         </button>
         <button
           onClick={handleSubmit}
-          className="bg-[#0D90C1] text-white px-8 p-2 rounded"
+          className="btn text-white px-8 p-2 rounded"
         >
           Submit
         </button>

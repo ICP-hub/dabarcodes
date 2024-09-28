@@ -76,10 +76,12 @@ const Step2 = ({ formData, setFormData, handleNextStep, handlePrevStep }) => {
     <>
       <form onSubmit={handleSubmit(onSubmit)} className="p-4">
         {/* Contact Information */}
-        <h3 className="font-bold text-xl mb-4">Contact Information</h3>
+        <h3 className="text-base roboto-bold mb-4">Contact Information</h3>
         <div className="grid md:grid-cols-2 gap-4 mb-4">
           <div className="flex flex-col">
-            <label className="text-sm font-medium">Phone Number*</label>
+            <label className=" required text-sm roboto-medium">
+              Phone Number
+            </label>
 
             <input
               type="text"
@@ -105,7 +107,9 @@ const Step2 = ({ formData, setFormData, handleNextStep, handlePrevStep }) => {
                 className="appearance-none w-4 h-4 border-2 border-gray-300 rounded-full checked:bg-[#0D90C1] checked:border-[#0D90C1] checked:after:w-2 checked:after:h-2 checked:after:bg-white checked:after:rounded-full checked:after:content-[''] checked:after:block checked:after:m-0.5"
               />
 
-              <label>Preferred Mode of Communication</label>
+              <label className="text-sm roboto-regular text-[#646464s] ml-2">
+                Preferred Mode of Communication
+              </label>
             </div>
             {/*  */}
             {errors.phoneNumber && (
@@ -124,7 +128,9 @@ const Step2 = ({ formData, setFormData, handleNextStep, handlePrevStep }) => {
           </div>
           {/*  */}
           <div className="flex flex-col">
-            <label className="text-sm font-medium">Email address*</label>
+            <label className="text-sm roboto-medium required ">
+              Email address
+            </label>
             <input
               type="email"
               {...register("email", { required: "Email address is required" })}
@@ -145,7 +151,9 @@ const Step2 = ({ formData, setFormData, handleNextStep, handlePrevStep }) => {
                 checked={formData.personalInfo.preferredMode === "email"}
                 className="appearance-none w-4 h-4 border-2 border-gray-300 rounded-full checked:bg-[#0D90C1] checked:border-[#0D90C1] checked:after:w-2 checked:after:h-2 checked:after:bg-white checked:after:rounded-full checked:after:content-[''] checked:after:block checked:after:m-0.5"
               />
-              <label>Preferred Mode of Communication</label>
+              <label className="text-sm roboto-regular text-[#646464s] ml-2">
+                Preferred Mode of Communication
+              </label>
             </div>
             {/*  */}
             {errors.email && (
@@ -157,11 +165,11 @@ const Step2 = ({ formData, setFormData, handleNextStep, handlePrevStep }) => {
         </div>
 
         {/* Address Information */}
-        <h3 className="font-bold text-xl mb-4">Address Information</h3>
+        <h3 className="text-base roboto-bold mb-4">Address Information</h3>
         <div className="grid md:grid-cols-3 gap-4 mb-4">
           {/*country  */}
           <div className="flex flex-col">
-            <label className="text-sm font-medium">Country*</label>
+            <label className="required text-sm roboto-medium">Country</label>
             <select
               {...register("country", { required: "Country is required" })}
               name="country"
@@ -184,7 +192,7 @@ const Step2 = ({ formData, setFormData, handleNextStep, handlePrevStep }) => {
           </div>
           {/* state */}
           <div className="flex flex-col">
-            <label className="text-sm font-medium">State*</label>
+            <label className="required text-sm roboto-medium">State</label>
             <select
               {...register("state", { required: "State is required" })}
               name="state"
@@ -207,7 +215,7 @@ const Step2 = ({ formData, setFormData, handleNextStep, handlePrevStep }) => {
           </div>
           {/*  city*/}
           <div className="flex flex-col">
-            <label className="text-sm font-medium">City*</label>
+            <label className=" required text-sm roboto-medium">City</label>
             <select
               {...register("city", { required: "City is required" })}
               name="city"
@@ -228,7 +236,9 @@ const Step2 = ({ formData, setFormData, handleNextStep, handlePrevStep }) => {
           </div>
           {/* postal code */}
           <div className="flex flex-col">
-            <label className="text-sm font-medium">Postal Code*</label>
+            <label className=" required text-sm roboto-medium">
+              Postal Code
+            </label>
             <input
               type="text"
               {...register("postalCode", {
@@ -248,7 +258,9 @@ const Step2 = ({ formData, setFormData, handleNextStep, handlePrevStep }) => {
           {/* time */}
 
           <div className="flex flex-col mb-4">
-            <label className="text-sm font-medium">Time at this address*</label>
+            <label className="required text-sm roboto-medium">
+              Time at this address
+            </label>
             <select
               {...register("timeAtAddress", {
                 required: "This field is required",
@@ -275,12 +287,14 @@ const Step2 = ({ formData, setFormData, handleNextStep, handlePrevStep }) => {
         </div>
 
         {/* Preferences and Referral Information */}
-        <h3 className="font-bold text-xl mb-4">
+        <h3 className="text-base roboto-bold mb-4">
           Preferences and Referral Information
         </h3>
         <div className="grid md:grid-cols-2 gap-4 mb-4">
           <div className="flex flex-col">
-            <label className="text-sm font-medium">Shopping Preferences*</label>
+            <label className="text-sm roboto-medium required">
+              Shopping Preferences
+            </label>
             <select
               {...register("shoppingPreference", {
                 required: "Shopping preference is required",
@@ -305,7 +319,7 @@ const Step2 = ({ formData, setFormData, handleNextStep, handlePrevStep }) => {
           </div>
 
           <div className="flex flex-col">
-            <label className="text-sm font-medium">
+            <label className="text-sm roboto-medium">
               Influencer Referral ID
             </label>
             <input
@@ -328,7 +342,7 @@ const Step2 = ({ formData, setFormData, handleNextStep, handlePrevStep }) => {
         </button>
         <button
           onClick={handleCheck}
-          className="bg-[#0D90C1] text-white px-8 p-2 rounded"
+          className="btn text-white px-8 p-2 rounded"
         >
           Next
         </button>

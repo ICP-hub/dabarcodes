@@ -13,9 +13,8 @@ const All_Top_SKU = () => {
       <div>
         <div className="md:flex justify-between   items-center ">
           <p
-            className="text-xl xl:mx-16 mx-8 md:text-start text-center 
-        mt-16 mb-8
-        font-extrabold Roboto"
+            className="text-2xl roboto-bold xl:mx-16 mx-8 md:text-start text-center 
+        mt-16 mb-8 "
           >
             Top Products
           </p>
@@ -32,9 +31,9 @@ const All_Top_SKU = () => {
       {/* recommend for u */}
       <div>
         <p
-          className="text-xl xl:mx-16 mx-8 md:text-start text-center 
+          className="text-2xl roboto-bold xl:mx-16 mx-8 md:text-start text-center 
         mt-16 mb-8
-        font-extrabold Roboto"
+      "
         >
           Recommend for you
         </p>
@@ -49,7 +48,7 @@ const All_Top_SKU = () => {
       {/* retailers near me */}
       <div className=" my-12 rounded-md  xl:mx-16 mx-8 ">
         <div className="flex    text-balance justify-between my-4   font-semibold">
-          <p className="lg:text-[20px] ">Retailers near me</p>
+          <p className="text-2xl roboto-bold">Retailers near me</p>
           <Link
             to=""
             className="cursor-pointer hover:underline decoration-[#0D90C1] underline-offset-8"
@@ -58,7 +57,7 @@ const All_Top_SKU = () => {
           </Link>
         </div>
         <div className=" grid xl:grid-cols-3 lg:grid-cols-2 grid-cols-1 gap-8">
-          <Shop_card datas={Shops} />
+          <Shop_card datas={Shops.slice(0, 6)} />
         </div>
       </div>
     </>
