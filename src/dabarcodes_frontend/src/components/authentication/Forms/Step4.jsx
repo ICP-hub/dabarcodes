@@ -31,12 +31,12 @@ const Step4 = ({ formData, setFormData, handleNextStep, handlePrevStep }) => {
   return (
     <>
       <form onSubmit={handleSubmit(onSubmit)} className="p-4">
-        <h3 className="font-bold text-xl mb-4">Privacy Settings</h3>
+        <h3 className="roboto-bold text-base mb-4">Privacy Settings</h3>
 
         {/* Privacy Preference Dropdown */}
         <div className="mb-4 w-[280px] pr-8">
-          <label className="block text-sm font-medium mb-1">
-            Privacy Preference *
+          <label className="block required text-sm roboto-medium mb-1">
+            Privacy Preference
           </label>
           <select
             {...register("privacyPreference", {
@@ -60,9 +60,6 @@ const Step4 = ({ formData, setFormData, handleNextStep, handlePrevStep }) => {
 
         {/* Privacy Checkboxes */}
         <div className="mb-4">
-          <label className="block text-sm font-medium mb-1">
-            Privacy Options
-          </label>
           <div className="space-y-2">
             <div>
               <input
@@ -70,7 +67,7 @@ const Step4 = ({ formData, setFormData, handleNextStep, handlePrevStep }) => {
                 {...register("permissions.nameRelatedLogons")}
                 className="h-4 w-4 accent-[#0D90C1] rounded-md"
               />
-              <label className="ml-2 text-balance ">
+              <label className="ml-2 text-balance text-base roboto-regular text-[#4B5565] ">
                 Give Permission to name related logons
               </label>
             </div>
@@ -81,7 +78,7 @@ const Step4 = ({ formData, setFormData, handleNextStep, handlePrevStep }) => {
                 {...register("permissions.verifyLogonPermissions")}
                 className="h-4 w-4 accent-[#0D90C1] rounded-md"
               />
-              <label className="ml-2 text-balance ">
+              <label className="ml-2 text-balance text-base roboto-regular text-[#4B5565] ">
                 Send confirmation email to verify logon permissions.
               </label>
             </div>
@@ -92,16 +89,12 @@ const Step4 = ({ formData, setFormData, handleNextStep, handlePrevStep }) => {
                 {...register("permissions.verifyAnonymity")}
                 className="h-4 w-4 accent-[#0D90C1] rounded-md"
               />
-              <label className="ml-2 text-balance ">
+              <label className="ml-2 text-balance text-base roboto-regular text-[#4B5565] ">
                 Send confirmation email to verify degree of anonymity
               </label>
             </div>
           </div>
         </div>
-
-        <button type="submit" className="hidden">
-          Submit
-        </button>
       </form>
       <div className="mt-4 flex justify-between">
         <button
@@ -112,7 +105,7 @@ const Step4 = ({ formData, setFormData, handleNextStep, handlePrevStep }) => {
         </button>
         <button
           onClick={handleCheck}
-          className="bg-[#0D90C1] text-white px-8 p-2 rounded"
+          className="btn text-white px-8 p-2 rounded"
         >
           Next
         </button>

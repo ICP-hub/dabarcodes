@@ -41,11 +41,17 @@ const Step1 = ({
     <>
       <form onSubmit={handleSubmit(onSubmit)} className="p-4">
         {/* Personal Information Section */}
-        <h3 className="font-bold text-xl mb-4">Personal Information</h3>
+        <h3 className="roboto-bold text-base mb-4">Personal Information</h3>
 
         <div className="md:flex gap-8">
           <div className="mb-4 md:w-2/5">
-            <label className="block text-sm font-medium mb-1">Pronouns*</label>
+            <label
+              className="block required text-sm
+            roboto-medium
+            mb-1"
+            >
+              Pronouns
+            </label>
             <select
               {...register("pronouns", { required: "This field is required" })}
               name="pronouns"
@@ -67,7 +73,12 @@ const Step1 = ({
           </div>
 
           <div className="mb-4 md:w-3/5">
-            <label className="block text-sm font-medium mb-1">Name*</label>
+            <label
+              className="block   required text-sm
+            roboto-medium mb-1"
+            >
+              Name
+            </label>
             <input
               {...register("name", { required: "Name is required" })}
               name="name"
@@ -82,11 +93,21 @@ const Step1 = ({
         </div>
 
         {/* Date of Birth Section */}
-        <h3 className="font-bold text-xl mb-4">Date of Birth</h3>
+        <h3
+          className="text-base
+            roboto-bold mb-4"
+        >
+          Date of Birth
+        </h3>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
           <div>
-            <label className="block text-sm font-medium mb-1">Month*</label>
+            <label
+              className="block  required text-sm
+            roboto-medium mb-1"
+            >
+              Month
+            </label>
             <input
               type="text"
               {...register("dobMonth", { required: "Month is required" })}
@@ -102,7 +123,12 @@ const Step1 = ({
             )}
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1">Day*</label>
+            <label
+              className="block  required text-sm
+            roboto-medium mb-1"
+            >
+              Day
+            </label>
             <input
               type="text"
               {...register("dobDay", { required: "Day is required" })}
@@ -118,7 +144,12 @@ const Step1 = ({
             )}
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1">Year*</label>
+            <label
+              className="block  required text-sm
+            roboto-medium mb-1"
+            >
+              Year
+            </label>
             <input
               type="text"
               {...register("dobYear", { required: "Year is required" })}
@@ -136,11 +167,21 @@ const Step1 = ({
         </div>
 
         {/* Demographic Information Section */}
-        <h3 className="font-bold text-xl mb-4">Demographic Information</h3>
+        <h3
+          className="text-base
+            roboto-bold  mb-4"
+        >
+          Demographic Information
+        </h3>
 
         <div className="grid md:grid-cols-2 grid-cols-1 md:gap-8">
           <div className="mb-4">
-            <label className="block text-sm font-medium mb-1">Ethnicity*</label>
+            <label
+              className="block  required text-sm
+            roboto-medium mb-1"
+            >
+              Ethnicity
+            </label>
             <select
               {...register("ethnicity", { required: "Ethnicity is required" })}
               name="ethnicity"
@@ -163,8 +204,11 @@ const Step1 = ({
           </div>
 
           <div className="mb-4">
-            <label className="block text-sm font-medium mb-1">
-              Primary Language*
+            <label
+              className="block  required text-sm
+            roboto-medium mb-1"
+            >
+              Primary Language
             </label>
             <select
               {...register("primaryLanguage", {
@@ -196,7 +240,7 @@ const Step1 = ({
         {currentStep < totalSteps && (
           <button
             onClick={handleCheck}
-            className="bg-[#0D90C1] text-white px-8 p-2 rounded"
+            className="btn text-white px-8 p-2 rounded"
           >
             Next
           </button>

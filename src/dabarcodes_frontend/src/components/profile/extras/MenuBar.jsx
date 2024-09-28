@@ -23,7 +23,7 @@ const MenuBar = ({ isOpen, onClose, onOptionSelect }) => {
       <div
         onClick={(e) => e.stopPropagation()}
         ref={modalRef}
-        className="bg-white rounded-md p-4 Roboto font-normal text-base shadow-md w-64"
+        className="bg-white rounded-md p-4  font-normal text-base shadow-md w-64"
       >
         <ul className="flex flex-col gap-2">
           <li

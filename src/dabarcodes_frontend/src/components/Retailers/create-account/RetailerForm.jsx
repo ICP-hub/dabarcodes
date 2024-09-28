@@ -287,7 +287,7 @@ const FileUploadComponent = () => {
         >
           Upload Image
         </button>
-        <p className="text-xs font-normal Roboto px-8 py-2 ">
+        <p className="text-xs font-normal  px-8 py-2 ">
           File should be in the .png, .jpg, .svg format with max file size of
           5mb.
         </p>

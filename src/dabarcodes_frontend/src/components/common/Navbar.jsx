@@ -70,7 +70,7 @@ const Navbar = ({ navItems, headerChildren, sidebarChildren }) => {
         closeSidebar={closeSidebar}
         items={isAuthenticated ? Login : NotLogin}
         isHR={false}
-        className="hidden xl:flex justify-center items-center gap-[40px] text-[16px] font-roboto font-normal leading-[19.2px] text-left text-black"
+        className="hidden xl:flex justify-center items-center gap-[40px] text-[16px] roboto-regular leading-[19.2px] text-left text-black"
       />
       {isAuthenticated && <Search className="hidden md:block " />}
       {headerChildren}
@@ -78,8 +78,8 @@ const Navbar = ({ navItems, headerChildren, sidebarChildren }) => {
       {!isAuthenticated ? (
         <Button
           onClick={openConnectWalletModal}
-          divClassName="hidden xl:flex"
-          buttonClassName="ml-[28px]"
+          divClassName="hidden xl:flex  roboto-medium"
+          buttonClassName="ml-[28px] text-base "
         >
           Login/Signup
         </Button>

@@ -20,10 +20,10 @@ const Subscription = () => {
       <main className="lg:pl-0 md:pl-52 sm:pl-36 pl-8 pb-4 ">
         {/* Header and Details Section */}
         <div className=" mb-8">
-          <span className="text-2xl font-bold italic mb-4 block mt-10">
+          <span className="text-2xl md:text-3xl  roboto-bold  mb-4 block mt-10">
             Join the Subscription
           </span>
-          <p className="text-md mb-6">
+          <p className="md:text-base text-sm mb-6 roboto-regular">
             Unlock exclusive access to gain unparalleled benefits designed to
             enhance <br /> your shopping experience:
           </p>
@@ -34,16 +34,22 @@ const Subscription = () => {
           <div className="xl:flex flex-wrap   gap-20 space-y-4">
             <div className="flex items-center space-x-4 ">
               <RiDiscountPercentFill size={40} color="#B72322" />
-              <p className="text-md font-bold">Exclusive Deals</p>
+              <p className="roboto-medium md:text-xl text-base">
+                Exclusive Deals
+              </p>
             </div>
             <div className="flex items-center space-x-4 ">
               <FaHeart size={38} color="#B72322" />
-              <p className="text-md font-bold">Personalized Offers</p>
+              <p className="roboto-medium md:text-xl text-base">
+                Personalized Offers
+              </p>
             </div>
           </div>
           <div className="flex items-center space-x-4 mt-4">
             <IoBagHandle size={40} color="#B72322" />
-            <p className="text-md font-bold">Seamless Shopping</p>
+            <p className="roboto-medium md:text-xl text-base">
+              Seamless Shopping
+            </p>
           </div>
         </div>
 
@@ -51,7 +57,7 @@ const Subscription = () => {
         <div className="md:pb-8 xl:pb-0">
           <Link
             to="/purchase"
-            className="bg-[#0D90C1] text-white py-2 px-6 rounded-md text-md font-medium"
+            className="btn text-[#E7F8FE] py-2 px-6 rounded-md  roboto-medium text-base"
           >
             Subscribe Now
           </Link>

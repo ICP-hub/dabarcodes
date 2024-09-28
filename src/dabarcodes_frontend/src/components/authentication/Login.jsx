@@ -22,7 +22,7 @@ const Login = () => {
       <div className="hidden rounded-md  md:block w-full md:w-[400px] bg-[#B5E8FB] mx-8 my-8 ">
         <div className="m-4 space-y-8">
           <Logo />
-          <h1 className="text-2xl font-bold mb-2">Welcome Back</h1>
+          <h1 className="text-2xl roboto-medium mb-2">Welcome Back</h1>
           <img
             src="/home.png"
             alt="Logo"
@@ -36,7 +36,7 @@ const Login = () => {
         <div className="w-full max-w-md">
           <h1 className="md:hidden mb-4 text-2xl font-bold ">Welcome Back</h1>
 
-          <h1 className="text-xl font-bold mb-6 ">Login to your account</h1>
+          <h1 className="text-base roboto-bold mb-6 ">Login to your account</h1>
 
           {/* Form */}
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
@@ -44,7 +44,7 @@ const Login = () => {
             <div>
               <label
                 htmlFor="name"
-                className="block text-sm font-medium text-gray-700"
+                className="block text-sm roboto-medium text-gray-700"
               >
                 Name <span className="text-red-500">*</span>
               </label>
@@ -64,7 +64,7 @@ const Login = () => {
             <div>
               <label
                 htmlFor="password"
-                className="block text-sm font-medium text-gray-700"
+                className="block text-sm roboto-medium text-gray-700"
               >
                 Password <span className="text-red-500">*</span>
               </label>
@@ -87,7 +87,7 @@ const Login = () => {
             <div>
               <button
                 type="submit"
-                className="w-full bg-[#0D90C1] text-white py-2 rounded-md "
+                className="w-full btn text-white py-2 rounded-md text-base "
               >
                 Login
               </button>
@@ -102,7 +102,7 @@ const Login = () => {
           </div>
 
           {/* Sign Up */}
-          <p className="text-center text-sm">
+          <p className="text-center text-base roboto-regular">
             Don't have an account?{" "}
             <Link to="/create-account" className="text-[#0D90C1] font-semibold">
               Sign up

@@ -15,9 +15,8 @@ const GetSkuByCategoryName = () => {
       <div>
         <div className="md:flex justify-between   items-center ">
           <p
-            className="text-xl xl:mx-16 mx-8 md:text-start text-center 
-        mt-16 mb-8
-        font-extrabold Roboto"
+            className="text-2xl roboto-bold xl:mx-16 mx-8 md:text-start text-center 
+        mt-16 mb-8 "
           >
             {decodedSku}
           </p>
@@ -34,9 +33,9 @@ const GetSkuByCategoryName = () => {
       {/* recommend for u */}
       <div>
         <p
-          className="text-xl xl:mx-16 mx-8 md:text-start text-center 
+          className="text-2xl roboto-bold xl:mx-16 mx-8 md:text-start text-center 
         mt-16 mb-8
-        font-extrabold Roboto"
+      "
         >
           Recommend for you
         </p>
@@ -51,7 +50,8 @@ const GetSkuByCategoryName = () => {
       {/* retailers near me */}
       <div className=" my-12 rounded-md  xl:mx-16 mx-8 ">
         <div className="flex    text-balance justify-between my-4   font-semibold">
-          <p className="lg:text-[20px] ">Retailers near me</p>
+          <p className="text-2xl roboto-bold">Retailers near me</p>
+
           <Link
             to=""
             className="cursor-pointer hover:underline decoration-[#0D90C1] underline-offset-8"

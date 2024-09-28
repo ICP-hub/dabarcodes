@@ -27,7 +27,7 @@ const Contact = ({ handleComponentSwitch }) => {
   };
   return (
     <>
-      <div className="space-y-4 Roboto">
+      <div className="space-y-4 ">
         <div className="flex gap-4 text-balance">
           <IoArrowBack
             className="cursor-pointer"

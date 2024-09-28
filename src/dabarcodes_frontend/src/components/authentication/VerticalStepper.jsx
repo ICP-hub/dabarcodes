@@ -3,11 +3,11 @@ import Logo from "../../reusable_components/Logo";
 
 const VerticalStepper = ({ currentStep }) => {
   return (
-    <div className="w-[350px] hidden md:block relative  bg-[#B5E8FB] rounded-lg">
+    <div className="w-[400px] hidden md:block relative  bg-[#B5E8FB] rounded-lg">
       <div className="ml-8 mr-8 mt-8">
         <Logo />
       </div>
-      <h1 className="ml-8 mt-8  text-[#000000] font-bold text-xl">
+      <h1 className="ml-8 mt-8  text-[#000000] roboto-medium text-2xl">
         Create Account
       </h1>
       <ul className="list-none relative ml-8 mt-8 mr-8  ">
@@ -35,7 +35,7 @@ const VerticalStepper = ({ currentStep }) => {
             <span
               className={` ${
                 currentStep > index ? "text-[#000000]" : "text-[#949494]"
-              } ml-4  `}
+              } ml-4 roboto-regular text-xl  `}
             >
               {label}
             </span>

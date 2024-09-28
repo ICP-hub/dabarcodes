@@ -4,7 +4,7 @@ const JoinSteps = ({ bgColor, steps }) => {
   return (
     <div className={`mx-auto ${bgColor} mt-4 sm:mt-8`}>
       <div className="text-center mb-12">
-        <h2 className="font-butler text-4xl font-extrabold leading-[37.2px]">
+        <h2 className="font- text-3xl roboto-bold  leading-[37.2px]">
           {steps.header}
         </h2>
       </div>
@@ -19,10 +19,10 @@ const JoinSteps = ({ bgColor, steps }) => {
               }`}
             >
               <img src={step.image} alt={step.alt} />
-              <h6 className="font-butler text-xl font-medium leading-6 text-center">
+              <h6 className=" text-xl  roboto-medium leading-6 text-center">
                 {step.title}
               </h6>
-              <p className="font-roboto text-sm font-normal leading-5 text-center text-gray-600">
+              <p className=" text-base roboto-regular leading-5 text-center text-gray-600">
                 {step.description}
               </p>
             </div>

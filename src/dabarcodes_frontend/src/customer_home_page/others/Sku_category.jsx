@@ -4,7 +4,7 @@ import { category } from "../../components/customer/giftCarddata";
 const Sku_category = () => {
   return (
     <>
-      <h1 className="text-center my-8 md:my-20  Roboto font-extrabold text-3xl ">
+      <h1 className="text-center my-8 md:my-20   md:text-3xl text-xl roboto-bold ">
         Explore by Category
       </h1>
       <div className="lg:mx-40 mb-40 md:gap-8 md:grid xl:grid-cols-5 cursor-pointer md:grid-cols-4 md:mx-8 flex flex-wrap    justify-center  gap-4      ">
@@ -27,7 +27,7 @@ const Sku_category = () => {
                   className="md:hidden  min-w-20 min-min-h-20 object-contain   "
                 />
               </div>
-              <p className="text-[16px] hover:font-bold   text-balance font-medium capitalize">
+              <p className="text-[16px] hover:font-bold   text-balance roboto-regular capitalize">
                 {item.name}
               </p>
             </Link>

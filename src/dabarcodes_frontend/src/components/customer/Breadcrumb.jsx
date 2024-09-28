@@ -92,40 +92,41 @@ const Breadcrumb = () => {
 
   const breadcrumbs = getBreadcrumbs();
 
-  if (location.pathname === "/") {
-    return null;
-  }
+  const shouldRenderDiv = location.pathname !== "/";
 
   return (
     <>
-      <div className="bg-[#0D90C1] h-9 text-white text-end p-2">
-        How to use daBarcodes
+      <div className="bg-[#0D90C1] h-auto text-white md:text-base roboto-regular leading-5 text-sm gap-2 p-2 flex justify-between md:justify-end md:space-x-8 pr-8">
+        <p>Stores near me</p>
+        <p> How to use daBarcodes</p>
       </div>
-      <div className="border-2 border-b-[#B4B1B4] text-white p-2 h-14 flex flex-wrap items-center">
-        {breadcrumbs.length > 0 && (
-          <div className="flex items-center">
-            <Link to="/" className="text-[#646464]">
-              Home
-            </Link>
-            <span className="mx-2">/</span>
-          </div>
-        )}
-        {breadcrumbs.slice(0, -1).map((breadcrumb, index) => (
-          <div key={breadcrumb.path} className="flex items-center">
-            <Link to={breadcrumb.path} className="text-[#646464]">
-              {breadcrumb.name}
-            </Link>
-            <span className="mx-2">/</span>
-          </div>
-        ))}
-        {breadcrumbs.length > 0 && (
-          <div className="flex items-center">
-            <span className="text-[#171717] underline">
-              {breadcrumbs[breadcrumbs.length - 1].name}
-            </span>
-          </div>
-        )}
-      </div>
+      {shouldRenderDiv && (
+        <div className="border-2 border-b-[#B4B1B4] text-white p-2 h-14 flex flex-wrap items-center">
+          {breadcrumbs.length > 0 && (
+            <div className="flex items-center">
+              <Link to="/" className="text-[#646464]">
+                Home
+              </Link>
+              <span className="mx-2">/</span>
+            </div>
+          )}
+          {breadcrumbs.slice(0, -1).map((breadcrumb, index) => (
+            <div key={breadcrumb.path} className="flex items-center">
+              <Link to={breadcrumb.path} className="text-[#646464]">
+                {breadcrumb.name}
+              </Link>
+              <span className="mx-2">/</span>
+            </div>
+          ))}
+          {breadcrumbs.length > 0 && (
+            <div className="flex items-center">
+              <span className="text-[#171717] underline">
+                {breadcrumbs[breadcrumbs.length - 1].name}
+              </span>
+            </div>
+          )}
+        </div>
+      )}
     </>
   );
 };

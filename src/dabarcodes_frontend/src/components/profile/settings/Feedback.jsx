@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import { IoArrowBack } from "react-icons/io5";
 const FeedbackOption = ({ text, onSelect, isSelected }) => (
   <div
-    className={`text-[#646464] w-fit px-6 text-sm border shadow-lg justify-center rounded-lg flex flex-col items-center py-6 cursor-pointer ${
+    className={`text-[#646464] w-fit px-6  border shadow-lg justify-center rounded-lg flex flex-col items-center py-6 cursor-pointer ${
       isSelected ? "border-[#0D90C1] border-2" : "border-gray-300"
     }`}
     onClick={() => onSelect(text)}
   >
     <img src="laptop.png" alt={text} />
-    <p>{text}</p>
+    <p className="roboto-general text-sm">{text}</p>
   </div>
 );
 const Feedback = ({ handleComponentSwitch }) => {
@@ -50,7 +50,7 @@ const Feedback = ({ handleComponentSwitch }) => {
 
   return (
     <>
-      <div className="space-y-4 Roboto">
+      <div className="space-y-4 ">
         <div className="flex gap-4 text-balance">
           <IoArrowBack
             className="cursor-pointer"
@@ -59,9 +59,9 @@ const Feedback = ({ handleComponentSwitch }) => {
           />
           <p>Back to General Settings</p>
         </div>
-        <p className="text-2xl font-extrabold">Support and Feedback</p>
-        <p className="text-base font-extrabold">Feedback</p>
-        <p className="text-base font-medium">
+        <p className="roboto-bold md:text-2xl text-xl">Support and Feedback</p>
+        <p className="text-xl roboto-bold">Feedback</p>
+        <p className="text-base roboto-medium">
           What do you think of the website daBARDODES?
         </p>
 
@@ -76,7 +76,7 @@ const Feedback = ({ handleComponentSwitch }) => {
           ))}
         </div>
 
-        <p className="text-sm font-semibold">Additional Feedback?</p>
+        <p className="text-sm roboto-medium">Additional Feedback?</p>
 
         <textarea
           className="border resize-none p-[14px] h-24 w-full  rounded-md ml-2"
@@ -97,7 +97,7 @@ const Feedback = ({ handleComponentSwitch }) => {
           />
           <label
             htmlFor="helper-checkbox"
-            className="ms-2 Roboto font-medium text-sm"
+            className="ms-2  roboto-medium text-sm"
           >
             I may be contacted about this feedback.{" "}
             <span className="text-[#0673C1]">Privacy Policy</span>

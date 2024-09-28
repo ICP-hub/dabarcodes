@@ -15,7 +15,7 @@ const SubscriptionCard = ({ type, price, description, features }) => {
   return (
     <>
       <div
-        className={`w-[300px] Roboto p-6 border-2 shadow-lg transition-all rounded-lg ${borderClass} cursor-pointer`}
+        className={`w-[300px]  p-6 border-2 shadow-lg transition-all rounded-lg ${borderClass} cursor-pointer`}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         onClick={() => setIsSelected(!isSelected)}

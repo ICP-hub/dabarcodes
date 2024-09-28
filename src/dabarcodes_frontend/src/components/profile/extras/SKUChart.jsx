@@ -41,7 +41,8 @@ const SKUChart = () => {
                   className="inline-block w-3 h-3 rounded-full mr-4 "
                   style={{ backgroundColor: colors[index].background }}
                 ></span>
-                {label}: {data[index]}
+                <p className="text-sm roboto-regular"> {label}:</p>
+                <p className="text-base roboto-bold">{data[index]}</p>
               </li>
             ))}
           </ul>

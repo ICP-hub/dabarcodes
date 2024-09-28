@@ -18,28 +18,30 @@ const MySKUs = () => {
   return (
     <>
       <div className="flex md:flex-row flex-col md:m-4 mb-4 justify-between items-center">
-        <h2 className="text-xl text-center md:text-left font-bold mb-2">
+        <h2 className="md:text-2xl text-xl text-center md:text-left roboto-bold mb-2">
           My SKUs
         </h2>
         <Search />
       </div>
 
-      <div className="w-fit border rounded-md Roboto md:text-sm gap-4 px-4 py-1 text-xs flex border-[#ADADAD]">
-        {skuTypes.map((type) => (
-          <p
-            key={type}
-            onClick={() => setActiveSKU(type)}
-            className={`cursor-pointer  rounded-md ${
-              activeSKU === type ? "font-extrabold " : ""
-            }`}
-          >
-            {type}
-          </p>
-        ))}
-      </div>
+      <main className="flex justify-center ">
+        <div className="w-fit border  rounded-md  md:text-sm gap-4 px-4 py-1 text-xs flex  border-[#ADADAD]">
+          {skuTypes.map((type) => (
+            <p
+              key={type}
+              onClick={() => setActiveSKU(type)}
+              className={`cursor-pointer  rounded-md ${
+                activeSKU === type ? "roboto-bold " : "roboto-regular"
+              }`}
+            >
+              {type}
+            </p>
+          ))}
+        </div>
+      </main>
 
       <SKUChart />
-      <div className="flex flex-col gap-6 py-4">
+      <div className="flex flex-col   gap-6 py-4">
         <SkuCard Data={productData} />
       </div>
     </>

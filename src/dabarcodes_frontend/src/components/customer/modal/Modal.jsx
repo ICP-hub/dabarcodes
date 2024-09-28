@@ -1,14 +1,4 @@
-import { useEffect } from "react";
-
 const Modal = ({ isOpen, onClose, children, className, mainclass }) => {
-  // useEffect(() => {
-  //   if (isOpen) {
-  //     document.body.style.overflow = "hidden"; // Prevent scrolling when modal is open
-  //   } else {
-  //     document.body.style.overflow = "unset"; // Restore scrolling when modal is closed
-  //   }
-  // }, [isOpen]);
-
   const handleOutsideClick = (e) => {
     if (e.target.id === "modal-overlay") {
       onClose();

@@ -37,8 +37,8 @@ const ConnectWallet = () => {
         >
           &times;
         </button>
-        <header className="text-[#0D90C1] pt-16 text-center sm:text-2xl font-extrabold py-4 rounded-t-lg">
-          Connect Wallet
+        <header className=" pt-16 text-center text-2xl roboto-bold py-4 rounded-t-lg">
+          Select a Wallet
         </header>
         <div className="sm:p-8 p-4 ">
           <table className="w-full border border-black rounded-lg border-separate border-spacing-0">
@@ -49,7 +49,7 @@ const ConnectWallet = () => {
                   onClick={() => handleConnectWalletImageClick("ICP Login")}
                 >
                   <img src="/login1.png" alt="ICP" className="mr-2" />
-                  <span className="font-bold">ICP Login</span>
+                  <span className="text-xl roboto-bold">ICP Login</span>
                 </td>
               </tr>
               <tr>
@@ -58,7 +58,7 @@ const ConnectWallet = () => {
                   onClick={() => handleConnectWalletImageClick("NFID")}
                 >
                   <img src="/login2.png" alt="NFID" className="mr-2" />
-                  <span className="font-bold">NFID</span>
+                  <span className="text-xl roboto-bold">NFID</span>
                 </td>
               </tr>
               <tr>
@@ -67,7 +67,7 @@ const ConnectWallet = () => {
                   onClick={() => handleConnectWalletImageClick("Bifinity")}
                 >
                   <img src="/login3.png" alt="Bifinity" className="mr-2" />
-                  <span className="font-bold">Bifinity</span>
+                  <span className="text-xl roboto-bold">Bifinity</span>
                 </td>
               </tr>
             </tbody>
@@ -75,13 +75,13 @@ const ConnectWallet = () => {
         </div>
 
         <div className="text-center mb-8 space-y-8">
-          <p className="text-sm text-[#454545]">
+          <p className="text-bae roboto-regular text-[#454545]">
             Already have an account{" "}
             <span onClick={GoToLogin} className="text-[#0673C1] cursor-pointer">
               Log in
             </span>
           </p>
-          <p className="text-xs ">
+          <p className="text-xs roboto-regular ">
             By connecting your wallet, you confirm that you have read
             <br /> and agree to our{" "}
             <span className="text-[#0673C1] cursor-pointer">

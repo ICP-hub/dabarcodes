@@ -11,7 +11,6 @@ const Footer = lazy(() => import("./components/Footer"));
 //pages
 const Home = lazy(() => import("./pages/Home"));
 const Customer_Home = lazy(() => import("./pages/Customer_Home"));
-const Retailer = lazy(() => import("./pages/Retailer"));
 const MultiStepForm = lazy(() =>
   import("./components/authentication/MultiStepForm")
 );
@@ -45,8 +44,13 @@ import NotificationsModal from "./components/customer/modal/NotificationsModal";
 import ProfileModal from "./components/customer/modal/ProfileModal";
 import TokensModal from "./components/customer/modal/TokensModal";
 import CoupanModal from "./components/customer/modal/CoupanModal";
-import LinkedSku from "./components/customer/modal/LinkedSku";
 import CountryList from "./components/customer/modal/CountryList";
+import UnlinkItemModal from "./components/customer/modal/UnlinkItemModal";
+import LinkItemModal from "./components/customer/modal/LinkItemModal";
+import Spinner from "./reusable_components/Spinner";
+
+//form routes
+const formRoutes = ["/create-account", "/login", "/retailer-account"];
 
 const AppContent = () => {
   const location = useLocation();
@@ -57,8 +61,9 @@ const AppContent = () => {
     isProfileModalOpen,
     isNotificitionsOn,
     isCoupanOn,
-    linkedSKU,
     isCountryList,
+    isUnlinkItemModal,
+    isLinkItemModal,
   } = useModal();
   useEffect(() => {
     const scrollToTop = () => {
@@ -79,31 +84,31 @@ const AppContent = () => {
   //
   return (
     <>
-      <Suspense fallback={<div>Loading...</div>}>
-        <Navbar />
-        <Breadcrumb />
+      <Suspense fallback={<Spinner />}>
+        {!formRoutes.includes(location.pathname) && <Navbar />}
+        {!formRoutes.includes(location.pathname) && <Breadcrumb />}
         <Routes>
           <Route
             path="/"
             element={isAuthenticated ? <Customer_Home /> : <Home />}
           />
           <Route path="/user/:id" element={<ProfileInfo />} />
-          <Route path="/retailer" element={<Retailer />} />
+          //forms
           <Route path="/create-account" element={<MultiStepForm />} />
           <Route path="/login" element={<Login />} />
           <Route path="/retailer-account" element={<RetailerForm />} />
+          //forms
           <Route path="/sku-category" element={<Sku_category />} />
           <Route path="/brands" element={<Brands />} />
           <Route path="/sku-details" element={<SkuDetails />} />
           <Route path="/All-Top-SKU" element={<All_Top_SKU />} />
           <Route path="/sku/:name" element={<GetSkuByCategoryName />} />
-
           <Route path="/store/:name" element={<StoreInfo />} />
           <Route path="/all-retailers" element={<All_retailers />} />
           <Route path="/subscription-plans" element={<Pricing />} />
+          <Route path="/loader" element={<Spinner />} />
         </Routes>
-        <Footer />
-
+        {!formRoutes.includes(location.pathname) && <Footer />}
         {/* Modals */}
         {isRoleModalOpen && <Role />}
         {isConnectWalletModalOpen && <ConnectWallet />}
@@ -111,8 +116,9 @@ const AppContent = () => {
         {isProfileModalOpen && <ProfileModal />}
         {isTokenOpen && <TokensModal />}
         {isCoupanOn && <CoupanModal />}
-        {linkedSKU && <LinkedSku />}
         {isCountryList && <CountryList />}
+        {isUnlinkItemModal && <UnlinkItemModal />}
+        {isLinkItemModal && <LinkItemModal />}
       </Suspense>
     </>
   );
