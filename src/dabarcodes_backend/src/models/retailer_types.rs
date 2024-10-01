@@ -16,7 +16,6 @@ pub(crate) struct RetailerProfile {
     pub email_notification: bool,
     pub mobile_notification:bool,
     pub retailer_preferences: String,
-    pub login_activity:Option<Vec<String>>,
     pub promotion_id:Option<Vec<String>>,
     pub supplier_id:Option<Vec<String>>,
     pub product_id:Option<Vec<String>>,
