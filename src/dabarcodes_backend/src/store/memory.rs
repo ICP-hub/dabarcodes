@@ -3,6 +3,7 @@ use std::cell::RefCell;
 use ic_stable_structures::{memory_manager::{MemoryId, MemoryManager}, DefaultMemoryImpl};
 
 const ACCOUNT_DATA: MemoryId = MemoryId::new(0);
+const PRODUCT_DATA: MemoryId = MemoryId::new(1);
 // const SKU_DATA:MemoryId=MemoryId::new(1);
 const RETAILER_DATA: MemoryId = MemoryId::new(2);
 const PROMOTION_DATA:MemoryId=MemoryId::new(3);
@@ -17,6 +18,9 @@ thread_local! {
 
 pub fn get_account_data_memory() -> StoreMemory {
   MEMORY_MANAGER.with(|m| m.borrow().get(ACCOUNT_DATA))
+}
+pub fn get_product_data_memory() -> StoreMemory {
+  MEMORY_MANAGER.with(|m| m.borrow().get(PRODUCT_DATA))
 }
 // pub fn get_sku_data_memory() -> StoreMemory {
 //   MEMORY_MANAGER.with(|m| m.borrow().get(SKU_DATA))
