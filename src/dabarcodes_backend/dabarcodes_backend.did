@@ -12,11 +12,11 @@ type Product = record {
   start_date : nat64;
   promotion_description : opt text;
   umbrella_brand : text;
-  regular_price : float64;
+  regular_price : nat64;
   brand : text;
-  original_price : float64;
+  original_price : nat64;
   category_id : nat64;
-  price_after_promotion : float64;
+  price_after_promotion : nat64;
 };
 
 type UserProfile = record { 
