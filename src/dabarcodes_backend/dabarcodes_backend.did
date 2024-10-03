@@ -1,3 +1,7 @@
+type Result = variant { Ok : text; Err : text };
+type Result_1 = variant { Ok : UserProfile; Err : text };
+type Result_2 = variant { Ok : RetailerProfile; Err : text };
+type Result_3 = variant { Ok : Product; Err : text };
 type Product = record {
   id : text;
   supplier : text;
@@ -14,10 +18,7 @@ type Product = record {
   category_id : nat64;
   price_after_promotion : float64;
 };
-type Result = variant { Ok : text; Err : text };
-type Result_1 = variant { Ok : UserProfile; Err : text };
-type Result_2 = variant { Ok : RetailerProfile; Err : text };
-type Result_3 = variant { Ok : Product; Err : text };
+
 type UserProfile = record { 
   name : text;
   pronouns: text;
