@@ -14,9 +14,11 @@ const Customer_Home = lazy(() => import("./pages/Customer_Home"));
 const MultiStepForm = lazy(() =>
   import("./components/authentication/MultiStepForm")
 );
-const Sku_category = lazy(() =>
-  import("./customer_home_page/others/sku_category")
-);
+
+// i commented this becuase its causing me an error.
+// const Sku_category = lazy(() =>
+//   import("./customer_home_page/others/sku_category")
+// );
 const SkuDetails = lazy(() => import("./customer_home_page/others/SkuDetails"));
 const All_Top_SKU = lazy(() =>
   import("./customer_home_page/others/All_Top_SKU")

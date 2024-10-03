@@ -1,6 +1,23 @@
+type Product = record {
+  id : text;
+  supplier : text;
+  name : text;
+  description : text;
+  end_date : nat64;
+  stock_level : nat64;
+  start_date : nat64;
+  promotion_description : opt text;
+  umbrella_brand : text;
+  regular_price : float64;
+  brand : text;
+  original_price : float64;
+  category_id : nat64;
+  price_after_promotion : float64;
+};
 type Result = variant { Ok : text; Err : text };
 type Result_1 = variant { Ok : UserProfile; Err : text };
 type Result_2 = variant { Ok : RetailerProfile; Err : text };
+type Result_3 = variant { Ok : Product; Err : text };
 type UserProfile = record { 
   name : text;
   pronouns: text;
@@ -71,10 +88,13 @@ type Promoprofile= record {
 
 service : {
   api_create_account : (UserProfile) -> (Result);
+  api_create_product : (Product) -> (Result);
   api_get_my_account : () -> (Result_1) query;
   api_update_account: (UserProfile)->(Result);
   api_create_retailer: (RetailerProfile)->(Result);
   api_get_my_retailer:()->(Result_2) query;
   api_update_retailer: (RetailerProfile)->(Result);
   api_add_retailer_promo:(text,Promoprofile)->(Result);
+  api_get_my_product : (text) -> (Result_3) query;
+  api_update_account : (Product ) -> (Result) query;
 }

@@ -1,9 +1,13 @@
 use ic_stable_structures::StableBTreeMap;
+use std::string::String; 
 
 use crate::models::user_types::UserProfile;
 //use crate::models::sku_types::SkuDetails;
 use crate::models::retailer_types::RetailerProfile;
 use crate::models::promo_type::Promoprofile;
+use crate::models::product::Product;
+// use crate::models::sku_types::SkuDetails;
+
 use super::memory::StoreMemory;
 
 pub(crate) struct ApplicationState {
@@ -12,12 +16,15 @@ pub(crate) struct ApplicationState {
    pub retailer:StableBTreeMap<candid::Principal, RetailerProfile, StoreMemory>,
    pub promtion:StableBTreeMap<String, Promoprofile, StoreMemory>,
 
+    pub product: StableBTreeMap<String, Product, StoreMemory>,
+//    pub sku:StableBTreeMap<String,SkuDetails,StoreMemory>//change
 }
 
 impl ApplicationState {
     pub fn new() -> Self {
         Self {
             account: init_account_state(),
+            product: product_state(),
             //sku:init_sku_state(),//change
             retailer:init_retailer_state(),
             promtion:init_promotion_state(),
@@ -27,6 +34,9 @@ impl ApplicationState {
 
 fn init_account_state() -> StableBTreeMap<candid::Principal, UserProfile, StoreMemory> {
     StableBTreeMap::init(crate::store::memory::get_account_data_memory())
+}
+fn product_state() -> StableBTreeMap<String, Product, StoreMemory> {
+    StableBTreeMap::init(crate::store::memory::get_product_data_memory())
 }
 // fn init_sku_state() -> StableBTreeMap<String, SkuDetails, StoreMemory> {  //change
 //     StableBTreeMap::init(crate::store::memory::get_sku_data_memory())
