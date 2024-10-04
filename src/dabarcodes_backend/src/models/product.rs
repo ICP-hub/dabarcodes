@@ -7,7 +7,6 @@ use serde::{Deserialize, Serialize};
 #[derive(Clone, CandidType, PartialEq, Debug, Serialize, Deserialize)]
 pub(crate) struct Product {
     pub name: String,                       // Changed product_name to name
-    pub id: String,                         // Changed product_id to id
     pub category_id: u64,                   // Changed category to category_id
     pub brand: String,
     pub umbrella_brand: String,             // Changed umbrella_brand_name to umbrella_brand

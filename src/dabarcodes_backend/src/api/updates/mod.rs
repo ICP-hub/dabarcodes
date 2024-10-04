@@ -6,3 +6,5 @@ mod sku_controller;
 mod products_controller;
 mod products_update_api;
 mod retailer_controller;
+mod employee_controller;
+mod employee_update_api;

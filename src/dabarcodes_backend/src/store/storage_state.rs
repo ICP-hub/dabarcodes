@@ -1,23 +1,26 @@
 use ic_stable_structures::StableBTreeMap;
-use std::string::String; 
+use std::string::String;
 
 use crate::models::user_types::UserProfile;
 //use crate::models::sku_types::SkuDetails;
-use crate::models::retailer_types::RetailerProfile;
-use crate::models::promo_type::Promoprofile;
+use crate::models::employee::Employee;
 use crate::models::product::Product;
+use crate::models::promo_type::Promoprofile;
+use crate::models::retailer_types::RetailerProfile;
 // use crate::models::sku_types::SkuDetails;
 
 use super::memory::StoreMemory;
 
 pub(crate) struct ApplicationState {
     pub account: StableBTreeMap<candid::Principal, UserProfile, StoreMemory>,
-   // pub sku:StableBTreeMap<String,SkuDetails,StoreMemory>//change
-   pub retailer:StableBTreeMap<candid::Principal, RetailerProfile, StoreMemory>,
-   pub promtion:StableBTreeMap<String, Promoprofile, StoreMemory>,
-
+    // pub sku:StableBTreeMap<String,SkuDetails,StoreMemory>//change
+    pub retailer: StableBTreeMap<candid::Principal, RetailerProfile, StoreMemory>,
+    pub promtion: StableBTreeMap<String, Promoprofile, StoreMemory>,
     pub product: StableBTreeMap<String, Product, StoreMemory>,
-//    pub sku:StableBTreeMap<String,SkuDetails,StoreMemory>//change
+    pub employee: StableBTreeMap<String, Employee, StoreMemory>,
+    pub user: StableBTreeMap<candid::Principal, String, StoreMemory>,
+
+    //    pub sku:StableBTreeMap<String,SkuDetails,StoreMemory>//change
 }
 
 impl ApplicationState {
@@ -26,8 +29,10 @@ impl ApplicationState {
             account: init_account_state(),
             product: product_state(),
             //sku:init_sku_state(),//change
-            retailer:init_retailer_state(),
-            promtion:init_promotion_state(),
+            retailer: init_retailer_state(),
+            promtion: init_promotion_state(),
+            employee: employee_state(),
+            user: user_state(),
         }
     }
 }
@@ -47,5 +52,10 @@ fn init_retailer_state() -> StableBTreeMap<candid::Principal, RetailerProfile, S
 fn init_promotion_state() -> StableBTreeMap<String, Promoprofile, StoreMemory> {
     StableBTreeMap::init(crate::store::memory::get_promotion_data_memory())
 }
-
-
+fn employee_state() -> StableBTreeMap<String, Employee, StoreMemory> {
+    StableBTreeMap::init(crate::store::memory::get_employee_data_memory())
+}
+// user function ---> to use.
+fn user_state() -> StableBTreeMap<candid::Principal, String, StoreMemory> {
+    StableBTreeMap::init(crate::store::memory::get_user_data_memory())
+}

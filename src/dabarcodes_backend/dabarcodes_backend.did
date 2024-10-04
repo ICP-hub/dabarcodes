@@ -2,8 +2,20 @@ type Result = variant { Ok : text; Err : text };
 type Result_1 = variant { Ok : UserProfile; Err : text };
 type Result_2 = variant { Ok : RetailerProfile; Err : text };
 type Result_3 = variant { Ok : Product; Err : text };
-type Product = record {
+type Employee = record {
   id : text;
+  send_password_through_email : bool;
+  force_to_reset_password_on_login : bool;
+  password : text;
+  name : text;
+  send_password : text;
+  logout_from_all_device : bool;
+  email : text;
+  assigned_role : text;
+  phone_number : text;
+  assigned_store : text;
+};
+type Product = record {
   supplier : text;
   name : text;
   description : text;
@@ -19,7 +31,18 @@ type Product = record {
   price_after_promotion : nat64;
 };
 
-type UserProfile = record { 
+type Result = variant { Ok : text; Err : text };
+type Result_1 = variant { Ok : UserProfile; Err : text };
+type Result_2 = variant { Ok : Employee; Err : text };
+type Result_3 = variant { Ok : Product; Err : text };
+type UserProfile = record {
+  time_at_this_address : text;
+  email_address : text;
+  country : text;
+  total_number_in_household : opt text;
+  city : text;
+  date : nat64;
+  password : text;
   name : text;
   pronouns: text;
   date: nat64;
@@ -89,7 +112,8 @@ type Promoprofile= record {
 
 service : {
   api_create_account : (UserProfile) -> (Result);
-  api_create_product : (Product) -> (Result);
+  api_create_employee : (text, Employee) -> (Result);
+  api_create_product : (text, Product) -> (Result);
   api_get_my_account : () -> (Result_1) query;
   api_update_account: (UserProfile)->(Result);
   api_create_retailer: (RetailerProfile)->(Result);
@@ -98,4 +122,7 @@ service : {
   api_add_retailer_promo:(text,Promoprofile)->(Result);
   api_get_my_product : (text) -> (Result_3) query;
   api_update_account : (Product ) -> (Result) query;
+  api_get_my_employee : (text) -> (Result_2) query;
+  api_get_my_product : (text) -> (Result_3) query;
+  api_update_account : (UserProfile) -> (Result) query;
 }
