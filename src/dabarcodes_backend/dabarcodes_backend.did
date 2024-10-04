@@ -2,7 +2,7 @@ type Result = variant { Ok : text; Err : text };
 type Result_1 = variant { Ok : UserProfile; Err : text };
 type Result_2 = variant { Ok : RetailerProfile; Err : text };
 type Result_3 = variant { Ok : Product; Err : text };
-
+type Result_4 = variant { Ok : Employee; Err : text };
 type Employee = record {
   send_password_through_email : bool;
   force_to_reset_password_on_login : bool;
@@ -31,18 +31,7 @@ type Product = record {
   price_after_promotion : nat64;
 };
 
-type Result = variant { Ok : text; Err : text };
-type Result_1 = variant { Ok : UserProfile; Err : text };
-type Result_2 = variant { Ok : Employee; Err : text };
-type Result_3 = variant { Ok : Product; Err : text };
-type UserProfile = record {
-  time_at_this_address : text;
-  email_address : text;
-  country : text;
-  total_number_in_household : opt text;
-  city : text;
-  date : nat64;
-  password : text;
+type UserProfile = record { 
   name : text;
   pronouns: text;
   date: nat64;
@@ -84,7 +73,7 @@ type UserProfile = record {
      description:text;
      select_retailer:vec principal;
      owner:principal;
-};
+   };
 type RetailerProfile= record {
      name: text;
      phone_number: text;
@@ -112,17 +101,14 @@ type Promoprofile= record {
 
 service : {
   api_create_account : (UserProfile) -> (Result);
-  api_create_employee : (text, Employee) -> (Result);
-  api_create_product : (text, Product) -> (Result);
   api_get_my_account : () -> (Result_1) query;
   api_update_account: (UserProfile)->(Result);
   api_create_retailer: (RetailerProfile)->(Result);
   api_get_my_retailer:()->(Result_2) query;
   api_update_retailer: (RetailerProfile)->(Result);
   api_add_retailer_promo:(text,Promoprofile)->(Result);
+  api_create_employee : (text, Employee) -> (Result);
+  api_create_product : (text, Product) -> (Result);
   api_get_my_product : (text) -> (Result_3) query;
-  api_update_account : (Product ) -> (Result) query;
-  api_get_my_employee : (text) -> (Result_2) query;
-  api_get_my_product : (text) -> (Result_3) query;
-  api_update_account : (UserProfile) -> (Result) query;
+  api_get_my_employee : (text) -> (Result_4) query;
 }
