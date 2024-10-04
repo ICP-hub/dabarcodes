@@ -17,11 +17,14 @@ pub const ERROR_EMPLOYEE_NOT_REGISTERED: &str = "Employee id is not registered w
 //promo retailer
 pub const  PROMO_ADD_ERROR:&str = "Failed to add Promotion: ";
 pub const  PROMO_ADD_SUCCESS:&str = "Successfull in adding Promotion: ";
+
 // SUCCESS
 pub const SUCCESS_ACCOUNT_CREATED: &str = "Account successfully created";
 pub const SUCCESS_ACCOUNT_UPDATED: &str = "Account successfully update";
-pub const SUCCESS_PRODUCT_UPDATED: &str = "product successfully created";
-pub const SUCCESS_EMPLOYEE_UPDATED: &str = "Employee successfully created";
+pub const SUCCESS_PRODUCT_UPDATED: &str = "product successfully updated";
+pub const SUCCESS_PRODUCT_CREATED: &str = "product successfully created";
+pub const SUCCESS_EMPLOYEE_UPDATED: &str = "Employee successfully updated";
+pub const SUCCESS_EMPLOYEE_CREATED: &str = "Employee successfully created";
 //pub const SUBSCRIPTION_SUCCESSFUL:&str = "Subscription succesfull";
 
 
