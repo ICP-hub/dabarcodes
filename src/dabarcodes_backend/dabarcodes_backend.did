@@ -1,9 +1,3 @@
-type Result = variant { Ok : text; Err : text };
-type Result_1 = variant { Ok : UserProfile; Err : text };
-type Result_2 = variant { Ok : RetailerProfile; Err : text };
-type Result_3 = variant { Ok : Product; Err : text };
-type Result_4 = variant { Ok : Employee; Err : text };
-type Result_5= variant{Ok: vec Promoprofile; Err: text};
 type Employee = record {
   send_password_through_email : bool;
   force_to_reset_password_on_login : bool;
@@ -44,9 +38,9 @@ type Result_1 = variant { Ok : UserProfile; Err : text };
 type Result_2 = variant { Ok : Employee; Err : text };
 type Result_3 = variant { Ok : Product; Err : text };
 type Result_4 = variant { Ok : RetailerProfile; Err : text };
+type Result_5 = variant { Ok : vec Promoprofile; Err : text };
 type RetailerProfile = record {
   email_address : text;
-  emplyee_id : opt vec text;
   supplier_id : opt vec text;
   promotion_id : opt vec text;
   product_id : opt vec text;
@@ -57,6 +51,7 @@ type RetailerProfile = record {
   phone_number : text;
   retailer_preferences : text;
   mobile_notification : bool;
+  employee_id : opt vec text;
   email_notification : bool;
   store_location : text;
 };
@@ -69,70 +64,25 @@ type UserProfile = record {
   date : nat64;
   password : text;
   name : text;
-  pronouns: text;
-  date: nat64;
-  ethnicity: text;
-  primary_language: text;
-  phone_number: text;
-  email_address: text;
-  country: text;
-  state: text;
-  city: text;
-  postal_code: text;
-  time_at_this_address: text;
-  retailer_preferences: text;
-  influencer_referral_id: opt text;
-  gender_biological: opt text;
-  gender_identity: opt text; 
-  citizenship: opt text;
-  income: opt nat64;
-  married: opt text;
-  spouse_name: opt text;
-  with_children: opt text;
-  age_group: opt text;
-  include_maid_name: opt text;
-  maid_name: opt text;
-  total_number_in_household: opt text;
-  privacy_preference: text;
-  password: text;
-  };
-
-   type SkuDetails=record {
-     name: text;
-     brand:text;
-     flavor:text;
-     consistency:text;
-     item_weight:text;
-     price:text;
-     active_promo: nat64;
-     promo_by:text;
-     description:text;
-     select_retailer:vec principal;
-     owner:principal;
-   };
-type RetailerProfile= record {
-     name: text;
-     phone_number: text;
-     email_address: text;
-     role: text;
-     store_name: text;
-     store_location: text;
-     password: text;
-     email_notification: bool;
-     mobile_notification:bool;
-     retailer_preferences: text;
-     promotion_id:opt vec text;
-     supplier_id:opt vec text;
-     product_id:opt vec text;
-     employee_id:opt vec text;
-};
-type Promoprofile= record {
-    product_name: text;
-     supplier_name: text;
-     brand_name: text;
-     start_date: nat64;
-     end_date: nat64;
-     qrcode: text;
+  include_maid_name : opt text;
+  postal_code : text;
+  gender_biological : opt text;
+  married : opt text;
+  maid_name : opt text;
+  state : text;
+  pronouns : text;
+  income : opt nat64;
+  citizenship : opt text;
+  with_children : opt text;
+  spouse_name : opt text;
+  ethnicity : text;
+  phone_number : text;
+  retailer_preferences : text;
+  privacy_preference : text;
+  gender_identity : opt text;
+  influencer_referral_id : opt text;
+  age_group : opt text;
+  primary_language : text;
 };
 service : {
   api_add_retailer_promo : (text, Promoprofile) -> (Result);
@@ -141,24 +91,10 @@ service : {
   api_create_product : (text, Product) -> (Result);
   api_create_retailer : (RetailerProfile) -> (Result);
   api_get_my_account : () -> (Result_1) query;
-  api_update_account: (UserProfile)->(Result);
-  //retailer side
-  api_create_retailer: (RetailerProfile)->(Result);
-  api_get_my_retailer:()->(Result_2) query;
-  api_update_retailer: (RetailerProfile)->(Result);
-// promotion
-  api_add_retailer_promo:(text,Promoprofile)->(Result);
-  api_get_promo_retailer:()->(Result_5) query;
-//employee
-  api_create_employee : (text, Employee) -> (Result);
-   api_get_my_employee : (text) -> (Result_4) query;
-  //product
-    api_create_product : (text, Product) -> (Result);
-  api_get_my_product : (text) -> (Result_3) query;
- 
   api_get_my_employee : (text) -> (Result_2) query;
   api_get_my_product : (text) -> (Result_3) query;
   api_get_my_retailer : () -> (Result_4) query;
+  api_get_promo_retailer : () -> (Result_5) query;
   api_update_account : (UserProfile) -> (Result);
   api_update_retailer : (RetailerProfile) -> (Result);
 }
