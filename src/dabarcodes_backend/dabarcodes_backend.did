@@ -99,7 +99,7 @@ type RetailerProfile= record {
      promotion_id:opt vec text;
      supplier_id:opt vec text;
      product_id:opt vec text;
-     emplyee_id:opt vec text;
+     employee_id:opt vec text;
 };
 type Promoprofile= record {
     product_name: text;

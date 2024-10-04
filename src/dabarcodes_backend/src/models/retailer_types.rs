@@ -19,7 +19,7 @@ pub(crate) struct RetailerProfile {
     pub promotion_id:Option<Vec<String>>,
     pub supplier_id:Option<Vec<String>>,
     pub product_id:Option<Vec<String>>,
-    pub emplyee_id:Option<Vec<String>>,
+    pub employee_id:Option<Vec<String>>,
 }
 
 impl Storable for RetailerProfile {

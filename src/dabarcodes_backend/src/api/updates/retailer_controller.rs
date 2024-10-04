@@ -81,10 +81,10 @@ pub fn controller_update_retailer(
                 } else {
                     args.product_id.clone()
                 },
-                emplyee_id: if args.emplyee_id.is_none() {
-                    existing_profile.emplyee_id.clone()
+                employee_id: if args.employee_id.is_none() {
+                    existing_profile.employee_id.clone()
                 } else {
-                    args.emplyee_id.clone()
+                    args.employee_id.clone()
                 },
             };
 
