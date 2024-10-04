@@ -3,6 +3,7 @@ type Result_1 = variant { Ok : UserProfile; Err : text };
 type Result_2 = variant { Ok : RetailerProfile; Err : text };
 type Result_3 = variant { Ok : Product; Err : text };
 type Result_4 = variant { Ok : Employee; Err : text };
+type Result_5= variant{Ok: vec Promoprofile; Err: text};
 type Employee = record {
   send_password_through_email : bool;
   force_to_reset_password_on_login : bool;
@@ -103,12 +104,18 @@ service : {
   api_create_account : (UserProfile) -> (Result);
   api_get_my_account : () -> (Result_1) query;
   api_update_account: (UserProfile)->(Result);
+  //retailer side
   api_create_retailer: (RetailerProfile)->(Result);
   api_get_my_retailer:()->(Result_2) query;
   api_update_retailer: (RetailerProfile)->(Result);
+// promotion
   api_add_retailer_promo:(text,Promoprofile)->(Result);
+  api_get_promo_retailer:()->(Result_5) query;
+//employee
   api_create_employee : (text, Employee) -> (Result);
-  api_create_product : (text, Product) -> (Result);
+   api_get_my_employee : (text) -> (Result_4) query;
+  //product
+    api_create_product : (text, Product) -> (Result);
   api_get_my_product : (text) -> (Result_3) query;
-  api_get_my_employee : (text) -> (Result_4) query;
+ 
 }
