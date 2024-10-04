@@ -6,7 +6,7 @@ pub fn api_get_my_product(product_id: String) -> Result<crate::models::product::
     with_read_state(|state| match state.product.get(&product_id) {
         Some(acc) => Ok(acc),
         None => Err(String::from(
-            "there is no product of this id"
+            crate::utils::constants::ERROR_PRODUCT_NOT_REGISTERED,
         )),
     })
 }
