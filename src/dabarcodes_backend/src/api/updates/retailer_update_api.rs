@@ -1,7 +1,7 @@
 use crate::utils::guards::*;
 
 //account creation
-#[ic_cdk::update]
+#[ic_cdk::update(guard=guard_prevent_user_recreation)]
 pub fn api_create_retailer(args: crate::models::retailer_types::RetailerProfile) -> Result<String, String> {
     super::retailer_controller::controller_create_retailer(args).map_err(|err| {
         format!(

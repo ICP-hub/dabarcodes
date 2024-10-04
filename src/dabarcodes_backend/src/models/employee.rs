@@ -7,7 +7,6 @@ use serde::{Deserialize, Serialize};
 #[derive(Clone, CandidType, PartialEq, Debug, Serialize, Deserialize)]
 pub(crate) struct Employee {
     pub name: String,                             // Product name
-    pub id: String,                               // Product ID
     pub email: String,                            // Email as a String
     pub phone_number: String,                     // Phone number as a String
     pub assigned_store: String,                   // Assigned store as a String

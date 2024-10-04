@@ -1,6 +1,8 @@
 
 
 
+use candid::Principal;
+
 use crate::with_write_state;
 
 pub fn controller_create_account(
@@ -14,6 +16,8 @@ pub fn controller_create_account(
         } else {
         }
         state.account.insert(ic_cdk::api::caller(), args);
+        state.user.insert(ic_cdk::api::caller(), "customer".to_string());
+
         Ok(())
     })
 }

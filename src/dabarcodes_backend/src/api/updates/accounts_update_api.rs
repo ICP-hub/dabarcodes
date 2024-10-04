@@ -1,8 +1,8 @@
-use crate::utils::guards::guard_prevent_anonymous_account;
+use crate::utils::guards::*;
 
 
 //customer account creation
-#[ic_cdk::update]
+#[ic_cdk::update(guard=guard_prevent_user_recreation)]
 pub fn api_create_account(args: crate::models::user_types::UserProfile) -> Result<String, String> {
     super::accounts_controller::controller_create_account(args).map_err(|err| {
         format!(

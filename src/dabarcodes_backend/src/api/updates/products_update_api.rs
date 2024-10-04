@@ -11,3 +11,4 @@ pub fn api_create_product(product_id: String,args: crate::models::product::Produ
 
     Ok(String::from(crate::utils::constants::SUCCESS_PRODUCT_UPDATED))
 }
+//should be passed as refeerence &product_id

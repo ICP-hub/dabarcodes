@@ -13,3 +13,5 @@ pub fn controller_create_product(
         Ok(())
     })
 }
+//do the same as how i have done in the function add promo in retailer_controller.rs
+//incomplete

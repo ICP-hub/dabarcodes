@@ -20,3 +20,12 @@ pub fn guard_prevent_anonymous_retailer() -> Result<(), String> {
         }
     })
 }
+pub fn guard_prevent_user_recreation()-> Result<(), String> {
+    with_read_state(|state| { 
+        if state.user.contains_key(&ic_cdk::api::caller()) {
+              Err(String::from(crate::utils::constants::WARNING_ANONYMOUS_CALL)) 
+        } else {
+            Ok(())
+        }
+    })
+}

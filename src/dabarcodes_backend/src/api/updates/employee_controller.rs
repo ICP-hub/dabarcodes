@@ -12,4 +12,5 @@ pub fn controller_create_employee(
         state.employee.insert(employee_id.clone(), employee); // Insert the product using its id as the key
         Ok(())
     })
-}
+}//do the same as how i have done in the function add promo in retailer_controller.rs
+//incomplete

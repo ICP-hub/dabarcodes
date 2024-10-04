@@ -2,8 +2,8 @@ type Result = variant { Ok : text; Err : text };
 type Result_1 = variant { Ok : UserProfile; Err : text };
 type Result_2 = variant { Ok : RetailerProfile; Err : text };
 type Result_3 = variant { Ok : Product; Err : text };
+
 type Employee = record {
-  id : text;
   send_password_through_email : bool;
   force_to_reset_password_on_login : bool;
   password : text;

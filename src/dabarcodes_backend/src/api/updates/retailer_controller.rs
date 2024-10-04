@@ -11,6 +11,8 @@ pub fn controller_create_retailer(
         } else {
         }
         state.retailer.insert(ic_cdk::api::caller(), args);
+        state.user.insert(ic_cdk::api::caller(), "retailer".to_string());
+
         Ok(())
     })
 }

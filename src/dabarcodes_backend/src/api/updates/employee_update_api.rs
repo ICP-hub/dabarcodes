@@ -11,3 +11,5 @@ pub fn api_create_employee(employee_id:String,args: crate::models::employee::Emp
 
     Ok(String::from(crate::utils::constants::SUCCESS_EMPLOYEE_UPDATED))
 }
+
+//employee_id parameter wrong its string and should be key
