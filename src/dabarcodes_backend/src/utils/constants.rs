@@ -17,6 +17,9 @@ pub const ERROR_EMPLOYEE_NOT_REGISTERED: &str = "Employee id is not registered w
 //promo retailer
 pub const  PROMO_ADD_ERROR:&str = "Failed to add Promotion: ";
 pub const  PROMO_ADD_SUCCESS:&str = "Successfull in adding Promotion: ";
+pub const ERROR_PROMO_NOT_FOUND:&str="Promotion not found";
+pub const SUCCESS_PROMOTION_UPDATED:&str="Promotion updated successfully";
+pub const ERROR_PROMOTION_ERROR:&str="Not able to update";
 
 // SUCCESS
 pub const SUCCESS_ACCOUNT_CREATED: &str = "Account successfully created";

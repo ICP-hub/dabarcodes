@@ -14,7 +14,7 @@ pub fn api_create_employee(key:String,args: crate::models::employee::Employee) -
 
 // function to update the employee.
 #[ic_cdk::update]
-pub fn api_update_account(key:String,args: crate::models::employee::Employee) -> Result<String, String> {
+pub fn api_update_employee(key:String,args: crate::models::employee::Employee) -> Result<String, String> {
     super::employee_controller::controller_update_employee(key.clone(),args).map_err(|err| {
         format!(
             "{}{}",

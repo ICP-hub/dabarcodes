@@ -1,10 +1,6 @@
 type Employee = record {
-  send_password_through_email : bool;
-  force_to_reset_password_on_login : bool;
   password : text;
   name : text;
-  send_password : text;
-  logout_from_all_device : bool;
   email : text;
   assigned_role : text;
   phone_number : text;
@@ -96,5 +92,8 @@ service : {
   api_get_my_retailer : () -> (Result_4) query;
   api_get_promo_retailer : () -> (Result_5) query;
   api_update_account : (UserProfile) -> (Result);
+  api_update_employee : (text, Employee) -> (Result);
+  api_update_product : (text, Product) -> (Result);
+  api_update_promotion : (text, Promoprofile) -> (Result);
   api_update_retailer : (RetailerProfile) -> (Result);
 }

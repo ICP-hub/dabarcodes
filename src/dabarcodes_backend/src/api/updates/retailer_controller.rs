@@ -116,3 +116,51 @@ pub fn controller_promo_retailer(
         }
     })
 }
+
+pub fn controller_update_promo(
+    key: String,
+    args: crate::models::promo_type::Promoprofile,
+) -> Result<(), String> {
+    with_write_state(|state| {
+        if let Some(existing_promo) = state.promtion.get(&key) {
+            let updated_promo = crate::models::promo_type::Promoprofile {
+                product_name: if args.product_name.is_empty() {
+                    existing_promo.product_name.clone()
+                } else {
+                    args.product_name.clone()
+                },
+                supplier_name: if args.supplier_name.is_empty() {
+                    existing_promo.supplier_name.clone()
+                } else {
+                    args.supplier_name.clone()
+                },
+                brand_name: if args.brand_name.is_empty() {
+                    existing_promo.brand_name.clone()
+                } else {
+                    args.brand_name.clone()
+                },
+                start_date: if args.start_date == 0 {
+                    existing_promo.start_date
+                } else {
+                    args.start_date
+                },
+                end_date: if args.end_date == 0 {
+                    existing_promo.end_date
+                } else {
+                    args.end_date
+                },
+                qrcode: if args.qrcode.is_empty() {
+                    existing_promo.qrcode.clone()
+                } else {
+                    args.qrcode.clone()
+                },
+            };
+            state.promtion.insert(key.clone(), updated_promo);
+            Ok(())
+        } else {
+            Err(String::from(
+                crate::utils::constants::ERROR_PROMO_NOT_FOUND,
+            ))
+        }
+    })
+}
