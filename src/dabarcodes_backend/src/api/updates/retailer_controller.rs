@@ -80,6 +80,10 @@ pub fn controller_update_retailer(
                     existing_profile.product_id.clone()
                 } else {
                     args.product_id.clone()
+                },store_id: if args.store_id.is_none() {
+                    existing_profile.store_id.clone()
+                } else {
+                    args.store_id.clone()
                 },
                 employee_id: if args.employee_id.is_none() {
                     existing_profile.employee_id.clone()
@@ -103,6 +107,11 @@ pub fn controller_promo_retailer(
 ) -> Result<(), String> {
     with_write_state(|state| {
         if let Some(mut retailer_profile) = state.retailer.get(&ic_cdk::api::caller()) {
+            if state.promtion.contains_key(&key.to_string()) {
+                return Err(String::from(
+                    crate::utils::constants::WARNING_PROMOTION_EXISTS,
+                ));
+            }
             state.promtion.insert(key.to_string(), args);
             if let Some(promo_ids) = &mut retailer_profile.promotion_id {
                 promo_ids.push(key.to_string());
@@ -161,6 +170,28 @@ pub fn controller_update_promo(
             Err(String::from(
                 crate::utils::constants::ERROR_PROMO_NOT_FOUND,
             ))
+        }
+    })
+}
+//store creation
+pub fn controller_store_retailer(key: &str,args: crate::models::store_detail::StoreDetail) -> Result<(), String> {
+    with_write_state(|state| {
+        if let Some(mut retailer_profile) = state.retailer.get(&ic_cdk::api::caller()) {
+            if state.store.contains_key(&key.to_string()) {
+                return Err(String::from(
+                    crate::utils::constants::WARNING_STORE_EXISTS,
+                ));
+            }
+            state.store.insert(key.to_string(), args);
+            if let Some(store_ids) = &mut retailer_profile.store_id {
+                store_ids.push(key.to_string());
+            } else {
+                retailer_profile.store_id = Some(vec![key.to_string()]);
+            }
+            state.retailer.insert(ic_cdk::api::caller(), retailer_profile);
+            Ok(())
+        } else {
+            Err(String::from(crate::utils::constants::ERROR_ACCOUNT_NOT_REGISTERED))
         }
     })
 }

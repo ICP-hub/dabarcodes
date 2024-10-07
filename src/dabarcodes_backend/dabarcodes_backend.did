@@ -48,10 +48,26 @@ type RetailerProfile = record {
   store_name : text;
   phone_number : text;
   retailer_preferences : text;
+  store_id : opt vec text;
   mobile_notification : bool;
   employee_id : opt vec text;
   email_notification : bool;
   store_location : text;
+};
+type StoreDetail = record {
+  total_sales : nat32;
+  country : text;
+  city : text;
+  postal_code : text;
+  email : text;
+  state : text;
+  total_product : nat32;
+  store_type : text;
+  total_supplier : nat32;
+  total_promotion : nat32;
+  phone_number : text;
+  total_units_sold : nat32;
+  top_selling_product : text;
 };
 type UserProfile = record {
   time_at_this_address : text;
@@ -84,6 +100,7 @@ type UserProfile = record {
 };
 service : {
   api_add_retailer_promo : (text, Promoprofile) -> (Result);
+  api_add_retailer_store : (text, StoreDetail) -> (Result);
   api_create_account : (UserProfile) -> (Result);
   api_create_employee : (text, Employee) -> (Result);
   api_create_product : (text, Product) -> (Result);
