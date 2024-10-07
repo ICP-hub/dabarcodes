@@ -7,6 +7,7 @@ use crate::models::employee::Employee;
 use crate::models::product::Product;
 use crate::models::promo_type::Promoprofile;
 use crate::models::retailer_types::RetailerProfile;
+use crate::models::store_detail::StoreDetail;
 // use crate::models::sku_types::SkuDetails;
 
 use super::memory::StoreMemory;
@@ -19,6 +20,7 @@ pub(crate) struct ApplicationState {
     pub product: StableBTreeMap<String, Product, StoreMemory>,
     pub employee: StableBTreeMap<String, Employee, StoreMemory>,
     pub user: StableBTreeMap<candid::Principal, String, StoreMemory>,
+    pub store:StableBTreeMap<String, StoreDetail, StoreMemory>,
 
     //    pub sku:StableBTreeMap<String,SkuDetails,StoreMemory>//change
 }
@@ -32,6 +34,7 @@ impl ApplicationState {
             retailer: init_retailer_state(),
             promtion: init_promotion_state(),
             employee: employee_state(),
+            store:init_store_state(),
             user: user_state(),
         }
     }
@@ -58,4 +61,8 @@ fn employee_state() -> StableBTreeMap<String, Employee, StoreMemory> {
 // user function ---> to use.
 fn user_state() -> StableBTreeMap<candid::Principal, String, StoreMemory> {
     StableBTreeMap::init(crate::store::memory::get_user_data_memory())
+}
+//for store detail in retailer
+fn init_store_state() -> StableBTreeMap<String, StoreDetail, StoreMemory> {
+    StableBTreeMap::init(crate::store::memory::get_store_data_memory())
 }

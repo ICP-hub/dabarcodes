@@ -31,11 +31,12 @@ type Promoprofile = record {
 };
 type Result = variant { Ok : text; Err : text };
 type Result_1 = variant { Ok : vec Employee; Err : text };
-type Result_2 = variant { Ok : UserProfile; Err : text };
-type Result_3 = variant { Ok : Employee; Err : text };
-type Result_4 = variant { Ok : Product; Err : text };
-type Result_5 = variant { Ok : RetailerProfile; Err : text };
-type Result_6 = variant { Ok : vec Promoprofile; Err : text };
+type Result_2 = variant { Ok : vec Product; Err : text };
+type Result_3 = variant { Ok : UserProfile; Err : text };
+type Result_4 = variant { Ok : Employee; Err : text };
+type Result_5 = variant { Ok : Product; Err : text };
+type Result_6 = variant { Ok : RetailerProfile; Err : text };
+type Result_7 = variant { Ok : vec Promoprofile; Err : text };
 type RetailerProfile = record {
   email_address : text;
   supplier_id : opt vec text;
@@ -88,11 +89,12 @@ service : {
   api_create_product : (text, Product) -> (Result);
   api_create_retailer : (RetailerProfile) -> (Result);
   api_get_all_employee : () -> (Result_1) query;
-  api_get_my_account : () -> (Result_2) query;
-  api_get_my_employee : (text) -> (Result_3) query;
-  api_get_my_product : (text) -> (Result_4) query;
-  api_get_my_retailer : () -> (Result_5) query;
-  api_get_promo_retailer : () -> (Result_6) query;
+  api_get_all_product : () -> (Result_2) query;
+  api_get_my_account : () -> (Result_3) query;
+  api_get_my_employee : (text) -> (Result_4) query;
+  api_get_my_product : (text) -> (Result_5) query;
+  api_get_my_retailer : () -> (Result_6) query;
+  api_get_promo_retailer : () -> (Result_7) query;
   api_update_account : (UserProfile) -> (Result);
   api_update_employee : (text, Employee) -> (Result);
   api_update_product : (text, Product) -> (Result);

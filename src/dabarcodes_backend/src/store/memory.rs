@@ -10,6 +10,7 @@ const PROMOTION_DATA:MemoryId=MemoryId::new(3);
 const EMPLOYEE_DATA:MemoryId=MemoryId::new(4);
 // this is for the user --->> where we were thinking to store principal id and a value.
 const USER_DATA:MemoryId=MemoryId::new(5);
+const STORE_DATA:MemoryId=MemoryId::new(6);
 
 pub type StoreMemory = ic_stable_structures::memory_manager::VirtualMemory<DefaultMemoryImpl>;
 
@@ -40,5 +41,8 @@ pub fn get_employee_data_memory() -> StoreMemory {
 // this is our function for the user.
 pub fn get_user_data_memory() -> StoreMemory {
   MEMORY_MANAGER.with(|m| m.borrow().get(USER_DATA))
+}
+pub fn get_store_data_memory() -> StoreMemory {
+  MEMORY_MANAGER.with(|m| m.borrow().get(STORE_DATA))
 }
 
