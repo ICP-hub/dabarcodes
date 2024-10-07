@@ -32,3 +32,29 @@ pub fn api_get_promo_retailer() -> Result<Vec<crate::models::promo_type::Promopr
         }
     })
 }
+
+// function to get all the store specfic of the retailer.
+#[ic_cdk::query]
+pub fn api_get_all_store() -> Result<Vec<crate::models::store_detail::StoreDetail>, String> {
+    with_read_state(|state| {
+        if let Some(retailer_profile) = state.retailer.get(&ic_cdk::api::caller()) {
+            if let Some(store_ids) = &retailer_profile.store_id {
+                let mut stores = Vec::new();
+                for store_id in store_ids {
+                    if let Some(store_data) = state.store.get(store_id) {
+                        stores.push(store_data.clone());
+                    } else {
+                        return Err(format!("Store ID {} not found", store_id));
+                    }
+                }
+                Ok(stores)
+            } else {
+                Ok(Vec::new())
+            }
+        } else {
+            Err(String::from(
+                crate::utils::constants::ERROR_ACCOUNT_NOT_REGISTERED,
+            ))
+        }
+    })
+}
