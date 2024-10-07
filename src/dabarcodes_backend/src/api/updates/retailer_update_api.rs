@@ -77,3 +77,19 @@ pub fn api_add_retailer_store(key:String,args:crate::models::store_detail::Store
         crate::utils::constants::SUCCESS_STORE_CREATED,
     ))
 }
+
+//upgrading store detail
+#[ic_cdk::update(guard=guard_prevent_anonymous_retailer)]
+pub fn api_update_retailer_store(key:String,args:crate::models::store_detail::StoreDetail)-> Result<String, String> {
+    super::retailer_controller::controller_store_retailer_update(key.clone(),args).map_err(|err| {
+        format!(
+            "{}{}",
+            crate::utils::constants::ERROR_STORE_ERROR,
+            err.to_string()
+        )
+    })?;
+
+    Ok(String::from(
+        crate::utils::constants::SUCCESS_STORE_UPDATED,
+    ))
+}

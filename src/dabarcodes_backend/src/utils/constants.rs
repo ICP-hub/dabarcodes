@@ -16,6 +16,7 @@ pub const ERROR_PRODUCT_NOT_REGISTERED: &str = "Product id is not registered wit
 pub const ERROR_EMPLOYEE_ERROR: &str = "Employee Error: ";
 pub const ERROR_EMPLOYEE_NOT_REGISTERED: &str = "Employee id is not registered with the platform";
 pub const ERROR_STORE_ERROR: &str = "STORE Error: ";
+pub const ERROR_STORE_NOT_REGISTERED: &str = "Store id is not registered with the platform";
 
 //promo retailer
 pub const  PROMO_ADD_ERROR:&str = "Failed to add Promotion: ";
@@ -32,6 +33,7 @@ pub const SUCCESS_PRODUCT_CREATED: &str = "product successfully created";
 pub const SUCCESS_EMPLOYEE_UPDATED: &str = "Employee successfully updated";
 pub const SUCCESS_EMPLOYEE_CREATED: &str = "Employee successfully created";
 pub const SUCCESS_STORE_CREATED: &str = "Store successfully created";
+pub const SUCCESS_STORE_UPDATED: &str = "Store successfully updated";
 //pub const SUBSCRIPTION_SUCCESSFUL:&str = "Subscription succesfull";
 
 
